@@ -11,12 +11,7 @@ const PricingPage: React.FC = () => {
     const openBookModal = () => setIsBookModalOpen(true);
     const closeBookModal = () => setIsBookModalOpen(false);
 
-    const scrollToContact = () => {
-        const contactSection = document.getElementById('contact');
-        if (contactSection) {
-            contactSection.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
+
 
     return (
         <div className="min-h-screen bg-wispr-cream selection:bg-wispr-purple selection:text-white flex flex-col">
@@ -44,7 +39,7 @@ const PricingPage: React.FC = () => {
             </main>
 
             <div id="contact">
-                <Footer onContactClick={scrollToContact} />
+                <Footer />
             </div>
             <StickyBar onBookDemo={openBookModal} />
             <BookDemoModal open={isBookModalOpen} onClose={closeBookModal} />

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Logo from './Logo';
 
 interface NavbarProps {
@@ -56,14 +56,24 @@ const Navbar: React.FC<NavbarProps> = ({ onBookDemo }) => {
           `}>
             <div className="flex flex-col nav:flex-row items-center gap-6 nav:gap-14 font-brand text-[12px] nav:text-[13px] font-black text-wispr-dark/40 uppercase tracking-[0.3em]">
               {navLinks.map((link) => (
-                <Link
+                <NavLink
                   key={link.name}
                   to={link.href}
-                  className="hover:text-wispr-dark transition-all duration-300 relative group/link whitespace-nowrap"
+                  className={({ isActive }: { isActive: boolean }) => `
+                    transition-all duration-300 relative group/link whitespace-nowrap
+                    ${isActive ? 'text-wispr-dark' : 'hover:text-wispr-dark'}
+                  `}
                 >
-                  {link.name}
-                  <span className="absolute -bottom-1.5 left-0 w-0 h-[2px] bg-wispr-purple transition-all duration-300 group-hover/link:w-full"></span>
-                </Link>
+                  {({ isActive }: { isActive: boolean }) => (
+                    <>
+                      {link.name}
+                      <span className={`
+                        absolute -bottom-1.5 left-0 h-[2px] bg-wispr-purple transition-all duration-300
+                        ${isActive ? 'w-full' : 'w-0 group-hover/link:w-full'}
+                      `}></span>
+                    </>
+                  )}
+                </NavLink>
               ))}
             </div>
           </div>

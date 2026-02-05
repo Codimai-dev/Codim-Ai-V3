@@ -3,11 +3,9 @@ import { Instagram, Linkedin, Twitter, Facebook, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
 
-interface FooterProps {
-    onContactClick?: () => void;
-}
+interface FooterProps { }
 
-const Footer: React.FC<FooterProps> = ({ onContactClick }) => {
+const Footer: React.FC<FooterProps> = () => {
     return (
         <footer className="py-24 bg-wispr-dark relative z-10 border-t border-white/5">
             <div className="max-w-[1200px] mx-auto px-6">
@@ -20,10 +18,10 @@ const Footer: React.FC<FooterProps> = ({ onContactClick }) => {
                         </p>
                         <div className="flex gap-5">
                             {[
-                                { Icon: Instagram, href: '#', label: 'Instagram' },
-                                { Icon: Linkedin, href: '#', label: 'LinkedIn' },
-                                { Icon: Twitter, href: '#', label: 'Twitter' },
-                                { Icon: Facebook, href: '#', label: 'Facebook' }
+                                { Icon: Instagram, href: 'https://www.instagram.com/codim.ai/', label: 'Instagram' },
+                                { Icon: Linkedin, href: 'https://www.linkedin.com/in/shivam-gupta-089518308/', label: 'LinkedIn' },
+                                { Icon: Twitter, href: 'https://x.com/codim_ai?s=20', label: 'Twitter' },
+                                { Icon: Facebook, href: 'https://www.facebook.com/people/CodimAi/61578209616406/', label: 'Facebook' }
                             ].map(({ Icon, href, label }) => (
                                 <a
                                     key={label}
@@ -45,14 +43,7 @@ const Footer: React.FC<FooterProps> = ({ onContactClick }) => {
                             <li><Link to="/tech" className="font-sodo font-bold text-slate-400 hover:text-white transition-colors text-sm">Our Tech</Link></li>
                             <li><Link to="/pricing" className="font-sodo font-bold text-slate-400 hover:text-white transition-colors text-sm">Pricing</Link></li>
                             <li><Link to="/article" className="font-sodo font-bold text-slate-400 hover:text-white transition-colors text-sm">Article</Link></li>
-                            <li>
-                                <button
-                                    onClick={onContactClick}
-                                    className="font-sodo font-bold text-slate-400 hover:text-white transition-colors text-sm"
-                                >
-                                    Contact
-                                </button>
-                            </li>
+
                         </ul>
                     </div>
 

@@ -39,12 +39,7 @@ const Home: React.FC = () => {
     const openBookModal = () => setIsBookModalOpen(true);
     const closeBookModal = () => setIsBookModalOpen(false);
 
-    const scrollToContact = () => {
-        const contactSection = document.getElementById('contact');
-        if (contactSection) {
-            contactSection.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
+
 
     return (
         <div className="min-h-screen bg-wispr-cream selection:bg-wispr-purple selection:text-white">
@@ -118,7 +113,7 @@ const Home: React.FC = () => {
                 </main>
             </section>
             <StickyBar onBookDemo={openBookModal} />
-            <Footer onContactClick={scrollToContact} />
+            <Footer />
             <BookDemoModal open={isBookModalOpen} onClose={closeBookModal} />
         </div>
     );
