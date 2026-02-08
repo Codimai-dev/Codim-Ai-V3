@@ -7,7 +7,7 @@ import BlogList from '../../components/Articles/BlogList';
 import BlogPostComponent from '../../components/Articles/BlogPost';
 import { BLOG_POSTS } from '../../components/Articles/data';
 import type { BlogPost } from '../../types';
-import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 const Article: React.FC = () => {
     const [isBookModalOpen, setIsBookModalOpen] = useState(false);
