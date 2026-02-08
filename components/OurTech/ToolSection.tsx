@@ -48,7 +48,7 @@ const ToolSection: React.FC<ToolSectionProps> = ({ tool, index, forceTheme, onBo
         <section
             ref={sectionRef}
             id={tool.id}
-            className={`w-full py-20 md:py-32 border-b border-black/5 transition-all duration-1000 relative z-10 overflow-hidden ${bgStyles[currentTheme as keyof typeof bgStyles]}`}
+            className={`w-full py-12 md:py-20 border-b border-black/5 transition-all duration-1000 relative z-10 overflow-hidden ${bgStyles[currentTheme as keyof typeof bgStyles]}`}
         >
             <div className={`max-w-7xl mx-auto px-6 flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-24 lg:gap-32`}>
 

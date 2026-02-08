@@ -4,23 +4,68 @@ import { Check, ArrowRight, ShieldCheck, Zap } from 'lucide-react';
 
 const PLANS = [
   {
-    name: "Growth",
-    price: "997",
-    desc: "For solo founders scaling fast.",
-    features: ["500 Leads / month", "Clay Enrichment", "AI Email Sequences", "Direct CRM Integration"]
+    name: "Free",
+    price: "0",
+    desc: "Get started. Explore the basics.",
+    subDesc: "Perfect for individuals or small teams who want to try the platform before committing.",
+    features: [
+      "Limited access to core tools",
+      "Basic AI features only",
+      "Usage caps on credits & workflows",
+      "Limited automation runs",
+      "Community support"
+    ],
+    bestFor: [
+      "Early exploration",
+      "Testing workflows",
+      "Understanding platform capabilities"
+    ],
+    cta: "Get Started Free"
   },
   {
-    name: "Revenue Engine",
-    price: "2,497",
-    desc: "The complete automated layer.",
-    features: ["2.5k Leads / month", "Omni-Nurturing", "Custom CRM Sync", "Priority Engineering Hub", "GEO Optimization"],
+    name: "Pro Platform",
+    price: "24,000",
+    desc: "All tools. One powerful engine.",
+    subDesc: "Designed for growing teams and companies that want full access without complexity.",
+    features: [
+      "Access to all 13 AI tools",
+      "Full platform functionality",
+      "Advanced workflows & automations",
+      "Centralized dashboard",
+      "Priority platform support"
+    ],
+    additionalCharges: [
+      "External API usage (OpenAI, Claude, etc.)",
+      "Third-party platform costs (if applicable)"
+    ],
+    bestFor: [
+      "Startups",
+      "Agencies",
+      "Product & growth teams",
+      "Companies scaling AI usage"
+    ],
+    cta: "Activate Platform",
     primary: true
   },
   {
-    name: "Powerhouse",
-    price: "Custom",
-    desc: "High-volume sales engineering.",
-    features: ["Unlimited Prospecting", "Custom API Nodes", "White-glove Build", "Dedicated Architect", "Infinite GEO Signals"]
+    name: "Custom",
+    price: "Custom Pricing",
+    desc: "Built for scale. Tailored for you.",
+    subDesc: "For enterprises and high-volume teams with advanced requirements.",
+    features: [
+      "Everything in Pro",
+      "Custom workflows & integrations",
+      "Dedicated setup & onboarding",
+      "Custom API orchestration",
+      "Enterprise-grade security & controls",
+      "Dedicated account/tech support"
+    ],
+    bestFor: [
+      "Enterprises",
+      "High-volume AI usage",
+      "Custom infrastructure needs"
+    ],
+    cta: "Let's Talk"
   }
 ];
 
@@ -46,14 +91,14 @@ const Pricing: React.FC<PricingProps> = ({ theme = 'light', onBookDemo }) => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start font-sodo perspective-xl">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-stretch font-sodo perspective-xl">
           {PLANS.map((plan, i) => (
             <div
               key={i}
-              className={`reveal-advanced active p-16 rounded-[4.5rem] flex flex-col relative transition-all duration-700 transform-gpu hover:-translate-y-8 hover:shadow-[0_80px_160px_rgba(0,0,0,0.15)] border group overflow-hidden ${isDark
-                ? 'bg-white/5 border-white/10 hover:bg-white/10 text-wispr-cream'
-                : 'bg-white border-wispr-dark/10 text-wispr-dark'
-                } ${plan.primary ? (isDark ? 'ring-4 ring-wispr-purple/20' : 'ring-4 ring-wispr-purple/10 shadow-2xl') : ''}`}
+              className={`reveal-advanced active p-10 md:p-14 rounded-[3rem] md:rounded-[4.5rem] flex flex-col relative transition-all duration-700 transform-gpu hover:-translate-y-8 hover:shadow-[0_80px_160px_rgba(0,0,0,0.15)] border group overflow-hidden ${isDark
+                ? 'bg-white/10 border-white/20 hover:bg-white/15 text-wispr-cream'
+                : 'bg-white border-wispr-dark/15 text-wispr-dark shadow-sm'
+                } ${plan.primary ? (isDark ? 'ring-4 ring-wispr-purple/30' : 'ring-4 ring-wispr-purple/20 shadow-2xl') : ''}`}
               style={{ transitionDelay: `${i * 200}ms` }}
             >
               {/* Internal Glass Shimmer */}
@@ -68,44 +113,84 @@ const Pricing: React.FC<PricingProps> = ({ theme = 'light', onBookDemo }) => {
                 </div>
               )}
 
-              <div className="mb-14 pt-4">
-                <h3 className={`text-4xl font-bold mb-4 tracking-tighter ${isDark ? 'text-wispr-cream' : 'text-wispr-dark'}`}>{plan.name}</h3>
-                <p className={`text-lg font-bold opacity-40 transition-opacity group-hover:opacity-80`}>{plan.desc}</p>
+              <div className="mb-10 pt-4">
+                <h3 className={`text-4xl font-bold mb-4 tracking-tighter ${isDark ? 'text-wispr-cream' : 'text-wispr-dark'} drop-shadow-sm`}>{plan.name}</h3>
+                <p className={`text-lg font-bold opacity-100 mb-2 leading-tight`}>{plan.desc}</p>
+                <p className={`text-sm opacity-70 leading-relaxed`}>{plan.subDesc}</p>
               </div>
 
-              <div className="flex items-baseline gap-2 mb-16 group-hover:scale-110 transition-transform duration-700 origin-left">
-                <span className={`text-7xl font-bold tracking-tighter ${isDark ? 'text-wispr-cream' : 'text-wispr-dark'}`}>
-                  {plan.price !== "Custom" ? `$${plan.price}` : "Custom"}
-                </span>
-                {plan.price !== "Custom" && <span className={`font-black text-2xl opacity-20`}>/mo</span>}
+              <div className="flex flex-col gap-1 mb-12 group-hover:scale-105 transition-transform duration-700 origin-left">
+                <div className="flex items-baseline gap-2">
+                  <span className={`text-5xl md:text-6xl font-bold tracking-tighter ${isDark ? 'text-wispr-cream' : 'text-wispr-dark'} drop-shadow-md`}>
+                    {plan.price !== "Custom Pricing" ? `₹${plan.price}` : "Custom Pricing"}
+                  </span>
+                  {plan.price !== "Custom Pricing" && <span className={`font-black text-xl opacity-40`}>/mo</span>}
+                </div>
+                {plan.name === "Pro Platform" && (
+                  <span className="text-xs font-bold opacity-60 uppercase tracking-widest">(Platform fee only)</span>
+                )}
               </div>
 
-              <div className="space-y-7 mb-20 flex-1">
-                {plan.features.map((f, fi) => (
-                  <div key={fi} className="flex items-center gap-5 transition-transform duration-500 hover:translate-x-2 group/feature">
-                    <div className={`w-8 h-8 rounded-2xl flex items-center justify-center shrink-0 transition-colors ${isDark ? 'bg-white/5 group-hover/feature:bg-wispr-purple' : 'bg-wispr-cream group-hover/feature:bg-wispr-purple'
-                      }`}>
-                      <Check size={18} className={`transition-colors ${isDark ? 'text-wispr-purple group-hover/feature:text-wispr-dark' : 'text-wispr-dark group-hover/feature:text-wispr-dark'}`} />
-                    </div>
-                    <span className={`text-lg font-bold transition-all ${isDark ? 'text-white/60 group-hover/feature:text-white' : 'text-slate-600 group-hover/feature:text-wispr-dark'}`}>{f}</span>
+              <div className="space-y-12 mb-16 flex-1">
+                {/* Features Section */}
+                <div>
+                  <h4 className="text-[11px] font-pike font-black uppercase tracking-[0.2em] mb-6 opacity-60">What you get</h4>
+                  <div className="space-y-4">
+                    {plan.features.map((f, fi) => (
+                      <div key={fi} className="flex items-start gap-4 transition-transform duration-500 hover:translate-x-2 group/feature">
+                        <div className={`w-6 h-6 rounded-lg flex items-center justify-center shrink-0 mt-0.5 transition-colors ${isDark ? 'bg-white/10 group-hover/feature:bg-wispr-purple' : 'bg-wispr-cream group-hover/feature:bg-wispr-purple shadow-sm'
+                          }`}>
+                          <Check size={14} className={`transition-colors ${isDark ? 'text-wispr-purple group-hover/feature:text-wispr-dark' : 'text-wispr-dark group-hover/feature:text-wispr-dark'}`} />
+                        </div>
+                        <span className={`text-base font-bold transition-all ${isDark ? 'text-white/80 group-hover/feature:text-white' : 'text-slate-700 group-hover/feature:text-wispr-dark'}`}>{f}</span>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
+
+                {/* Additional Charges Section */}
+                {plan.additionalCharges && (
+                  <div>
+                    <h4 className="text-[11px] font-pike font-black uppercase tracking-[0.2em] mb-6 opacity-60">Additional charges</h4>
+                    <div className="space-y-4">
+                      {plan.additionalCharges.map((c, ci) => (
+                        <div key={ci} className="flex items-start gap-4 transition-transform duration-500 hover:translate-x-2">
+                          <div className="w-1.5 h-1.5 rounded-full bg-wispr-purple mt-2 shrink-0 opacity-60" />
+                          <span className={`text-sm font-bold ${isDark ? 'text-white/70' : 'text-slate-600'}`}>{c}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Best For Section */}
+                <div>
+                  <h4 className="text-[11px] font-pike font-black uppercase tracking-[0.2em] mb-6 opacity-60">Best for</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {plan.bestFor.map((b, bi) => (
+                      <span key={bi} className={`text-[10px] font-bold px-3 py-1.5 rounded-lg border uppercase tracking-wider ${isDark ? 'border-white/20 bg-white/10 text-white/70' : 'border-wispr-dark/20 bg-wispr-cream text-wispr-dark/60'
+                        }`}>
+                        {b}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
 
               <button
                 onClick={onBookDemo}
-                className={`w-full py-8 rounded-[2.5rem] font-black text-xl transition-all flex items-center justify-center gap-4 relative overflow-hidden group/btn active:scale-95 ${plan.primary
+                className={`w-full py-6 md:py-8 rounded-[2rem] md:rounded-[2.5rem] font-black text-lg md:text-xl transition-all flex items-center justify-center gap-4 relative overflow-hidden group/btn active:scale-95 ${plan.primary
                   ? 'bg-wispr-purple text-wispr-dark shadow-[0_30px_60px_rgba(216,180,254,0.3)]'
                   : (isDark ? 'bg-white/5 text-white border border-white/10 hover:bg-white/10' : 'bg-wispr-dark text-white shadow-xl hover:bg-black')
                   }`}>
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500"></div>
                 <span className="relative z-10 flex items-center gap-3">
-                  {plan.price === "Custom" ? "Talk to Architect" : "Activate Engine"}
+                  {plan.cta}
                   <ArrowRight size={22} className="group-hover/btn:translate-x-2 transition-transform" />
                 </span>
               </button>
 
-              <div className="mt-8 flex items-center justify-center gap-3 opacity-20 group-hover:opacity-60 transition-opacity">
+              <div className="mt-8 flex items-center justify-center gap-3 opacity-40 group-hover:opacity-100 transition-opacity">
                 <ShieldCheck size={14} />
                 <span className="font-pike text-[10px] font-black tracking-widest uppercase">SECURE STACK</span>
               </div>
@@ -116,7 +201,7 @@ const Pricing: React.FC<PricingProps> = ({ theme = 'light', onBookDemo }) => {
         <div className="mt-40 p-12 bg-white/5 border border-white/10 rounded-[3.5rem] flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left reveal-advanced active">
           <div>
             <h4 className={`text-2xl font-bold mb-2 ${isDark ? 'text-wispr-cream' : 'text-wispr-dark'}`}>Need a white-glove migration?</h4>
-            <p className="opacity-40 font-bold">Our engineering team can handle the total stack transfer in 72 hours.</p>
+            <p className="opacity-70 font-bold italic">Our engineering team can handle the total stack transfer in 72 hours.</p>
           </div>
           <button
             onClick={onBookDemo}

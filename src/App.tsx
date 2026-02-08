@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import OurTech from './pages/OurTech';
 import Article from './pages/Article';
 import PricingPage from './pages/PricingPage';
+import NotFound from './pages/NotFound';
 import ScrollToTop from '../components/ScrollToTop';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route path="/tech" element={<OurTech />} />
         <Route path="/article" element={<Article />} />
         <Route path="/pricing" element={<PricingPage />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   )

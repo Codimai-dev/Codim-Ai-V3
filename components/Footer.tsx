@@ -3,9 +3,12 @@ import { Instagram, Linkedin, Twitter, Facebook, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
 
-interface FooterProps { }
+interface FooterProps {
+    onPrivacyClick?: () => void;
+    onTermsClick?: () => void;
+}
 
-const Footer: React.FC<FooterProps> = () => {
+const Footer: React.FC<FooterProps> = ({ onPrivacyClick, onTermsClick }) => {
     return (
         <footer className="py-24 bg-wispr-dark relative z-10 border-t border-white/5">
             <div className="max-w-[1200px] mx-auto px-6">
@@ -71,8 +74,18 @@ const Footer: React.FC<FooterProps> = () => {
                         &copy; {new Date().getFullYear()} Codimai . All rights reserved.
                     </p>
                     <div className="flex gap-10 text-[12px] font-black text-slate-500 uppercase tracking-widest font-brand">
-                        <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-                        <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+                        <button
+                            onClick={onPrivacyClick}
+                            className="hover:text-white transition-colors cursor-pointer"
+                        >
+                            Privacy Policy
+                        </button>
+                        <button
+                            onClick={onTermsClick}
+                            className="hover:text-white transition-colors cursor-pointer"
+                        >
+                            Terms of Service
+                        </button>
                         <a href="#" className="hover:text-white transition-colors">Cookies</a>
                     </div>
                 </div>

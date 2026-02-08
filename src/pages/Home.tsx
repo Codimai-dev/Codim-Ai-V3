@@ -5,7 +5,6 @@ import { Secondhero } from '../../components/Home/Secondhero';
 import { ProblemSection } from '../../components/Home/ProblemSection';
 import { DefinitionSection } from '../../components/Home/DefinitionSection';
 import { SystemWorkflow } from '../../components/Home/SystemWorkflow';
-import { LifecycleSection } from '../../components/Home/LifecycleSection';
 import { ContrastSection } from '../../components/Home/ContrastSection';
 import { AudienceSection } from '../../components/Home/AudienceSection';
 import { FinalStatement } from '../../components/Home/FinalStatement';
@@ -13,6 +12,8 @@ import { ActionsSection } from '../../components/Home/ActionsSection';
 import StickyBar from '../../components/StickyBar';
 import Footer from '../../components/Footer';
 import BookDemoModal from '../../components/BookDemoModal';
+import PrivacyPolicyModal from '../../components/PrivacyPolicyModal';
+import TermsConditionsModal from '../../components/TermsConditionsModal';
 
 const Home: React.FC = () => {
     useEffect(() => {
@@ -35,9 +36,17 @@ const Home: React.FC = () => {
     }, []);
 
     const [isBookModalOpen, setIsBookModalOpen] = useState(false);
+    const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
+    const [isTermsModalOpen, setIsTermsModalOpen] = useState(false);
 
     const openBookModal = () => setIsBookModalOpen(true);
     const closeBookModal = () => setIsBookModalOpen(false);
+
+    const openPrivacyModal = () => setIsPrivacyModalOpen(true);
+    const closePrivacyModal = () => setIsPrivacyModalOpen(false);
+
+    const openTermsModal = () => setIsTermsModalOpen(true);
+    const closeTermsModal = () => setIsTermsModalOpen(false);
 
 
 
@@ -71,19 +80,11 @@ const Home: React.FC = () => {
                 </main>
             </section>
 
-            {/* Light Theme: Workflow */}
+            {/* Light Theme: Workflow (Now containing Lifecycle Stages) */}
             <section className="relative bg-[#ffffff] py-24 sm:py-32 border-y border-black/5">
                 <div className="absolute inset-0 grid-bg-light"></div>
                 <main className="max-w-[1200px] mx-auto px-6 md:px-8 relative z-10">
                     <SystemWorkflow />
-                </main>
-            </section>
-
-            {/* Dark Theme: Lifecycle */}
-            <section className="relative bg-[#000000] py-24 sm:py-32 overflow-hidden">
-                <div className="absolute inset-0 grid-bg-dark opacity-30"></div>
-                <main className="max-w-[1200px] mx-auto px-6 md:px-8 relative z-10">
-                    <LifecycleSection />
                 </main>
             </section>
 
@@ -106,15 +107,17 @@ const Home: React.FC = () => {
             </section>
 
             {/* Light Theme: Action */}
-            <section className="relative bg-[#ffffff] py-24 border-t border-black/5">
+            <section className="relative bg-[#ffffff] py-24 border-t border-black/5 overflow-hidden">
                 <div className="absolute inset-0 grid-bg-light"></div>
-                <main className="max-w-[1200px] mx-auto px-6 md:px-8 relative z-10">
+                <div className="relative z-10 w-full">
                     <ActionsSection onBookDemo={openBookModal} />
-                </main>
+                </div>
             </section>
             <StickyBar onBookDemo={openBookModal} />
-            <Footer />
+            <Footer onPrivacyClick={openPrivacyModal} onTermsClick={openTermsModal} />
             <BookDemoModal open={isBookModalOpen} onClose={closeBookModal} />
+            <PrivacyPolicyModal open={isPrivacyModalOpen} onClose={closePrivacyModal} />
+            <TermsConditionsModal open={isTermsModalOpen} onClose={closeTermsModal} />
         </div>
     );
 };

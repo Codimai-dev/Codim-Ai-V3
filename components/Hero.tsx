@@ -73,6 +73,9 @@ const Hero: React.FC<HeroProps> = ({ onBookDemo }) => {
               closing.
             </span>
           </p>
+          <div className="mt-8 sm:mt-12 text-lg sm:text-xl md:text-2xl text-slate-400 font-medium font-sodo italic reveal-advanced active" style={{ transitionDelay: '1s' }}>
+            "Automate <span className="text-wispr-dark font-black not-italic">operations, sales, and support</span> — <span className="text-wispr-purple font-black not-italic underline decoration-wispr-purple/30 underline-offset-8">without hiring more people.</span>"
+          </div>
         </div>
 
         {/* Enhanced Call to Action */}

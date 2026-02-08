@@ -7,7 +7,7 @@ export const DefinitionSection: React.FC = () => {
       <div className="reveal flex flex-col items-center text-center gap-4 sm:gap-6 px-4">
         <span className="text-[10px] sm:text-[12px] font-black text-purple-500 uppercase tracking-[0.5em]">The Concept</span>
         <h2 className="text-[32px] sm:text-[48px] md:text-[84px] font-lander font-black text-white tracking-tighter leading-[1.1] sm:leading-none max-w-5xl">
-          What is a <span className="text-reveal">Unified Platform?</span>
+          What is a <span className="text-reveal">CodimAi?</span>
         </h2>
       </div>
 

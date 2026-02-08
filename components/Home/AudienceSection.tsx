@@ -27,17 +27,17 @@ export const AudienceSection: React.FC = () => {
 
       <div className="grid lg:grid-cols-2 gap-12 md:gap-24">
         {/* Left Column: Benefits */}
-        <div className="reveal reveal-delay-1 space-y-12">
-          <div className="flex items-center gap-6">
+        <div className="space-y-12">
+          <div className="reveal stagger-1 flex items-center gap-6">
             <div className="w-12 h-[1px] bg-purple-500/30"></div>
             <h3 className="text-[14px] font-brand font-black uppercase tracking-[0.3em] text-[#8b5cf6]">System Benefits</h3>
           </div>
           <div className="space-y-4">
             {benefitItems.map((p, i) => (
-              <div key={i} className="glass-panel p-6 group hover:translate-x-4 transition-all duration-500 cursor-default">
+              <div key={i} className={`reveal stagger-${i + 2} glass-panel p-6 group hover:bg-white/5 transition-all duration-500 cursor-default border border-white/5 hover:border-purple-500/20`}>
                 <div className="flex items-center gap-6">
-                  <span className="text-[#8b5cf6] font-bold text-xl group-hover:rotate-12 transition-transform">→</span>
-                  <p className="text-[18px] text-[#94a3b8] font-sodo group-hover:text-white transition-colors">{p}</p>
+                  <span className="text-[#8b5cf6] font-bold text-xl group-hover:translate-x-2 transition-transform">→</span>
+                  <p className="text-[17px] text-slate-400 font-sodo group-hover:text-white transition-colors">{p}</p>
                 </div>
               </div>
             ))}
@@ -45,17 +45,17 @@ export const AudienceSection: React.FC = () => {
         </div>
 
         {/* Right Column: Sectors */}
-        <div className="reveal reveal-delay-2 space-y-12">
-          <div className="flex items-center gap-6">
+        <div className="space-y-12">
+          <div className="reveal stagger-1 flex items-center gap-6">
             <div className="w-12 h-[1px] bg-purple-500/30"></div>
             <h3 className="text-[14px] font-brand font-black uppercase tracking-[0.3em] text-[#8b5cf6]">Core Sectors</h3>
           </div>
           <div className="space-y-4">
             {sectorItems.map((p, i) => (
-              <div key={i} className="glass-panel p-6 group hover:translate-x-4 transition-all duration-500 cursor-default">
+              <div key={i} className={`reveal stagger-${i + 2} glass-panel p-6 group hover:bg-white/5 transition-all duration-500 cursor-default border border-white/5 hover:border-purple-500/20`}>
                 <div className="flex items-center gap-6">
-                  <span className="text-[#8b5cf6] font-bold text-xl group-hover:-rotate-12 transition-transform">→</span>
-                  <p className="text-[18px] text-[#94a3b8] font-sodo group-hover:text-white transition-colors">{p}</p>
+                  <span className="text-[#8b5cf6] font-bold text-xl group-hover:translate-x-2 transition-transform">→</span>
+                  <p className="text-[17px] text-slate-400 font-sodo group-hover:text-white transition-colors">{p}</p>
                 </div>
               </div>
             ))}
