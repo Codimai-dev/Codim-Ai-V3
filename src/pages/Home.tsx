@@ -141,7 +141,7 @@ const Home: React.FC = () => {
 
             <main>
                 {/* Hero Section - PREMIUM ENHANCED */}
-                <section className="relative min-h-[75vh] flex items-center pt-24 md:pt-4 pb-0 px-6 overflow-hidden bg-wispr-cream">
+                <section className="relative min-h-[85vh] flex items-center pt-32 md:pt-44 pb-0 px-6 overflow-hidden bg-wispr-cream">
                     {/* Background Refined Gradients & Mesh */}
                     <div className="absolute inset-0 overflow-hidden pointer-events-none">
                         <div className="absolute top-[-10%] left-[-5%] w-[50%] h-[50%] bg-wispr-purple/15 blur-[120px] rounded-full animate-float opacity-70"></div>
@@ -176,13 +176,13 @@ const Home: React.FC = () => {
                             {COMPANY_NAME} is your strategic partner for <span className="text-wispr-dark font-bold italic">Generative Engine Optimization</span>. We ensure your brand is cited as the primary authority in AI-powered answers.
                         </p>
 
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-8 reveal-advanced active" style={{ transitionDelay: '300ms' }}>
-                            <Link to="/contact" className="relative group overflow-hidden px-14 py-6 accent-gradient rounded-[2rem] text-white font-brand font-black text-sm uppercase tracking-widest transition-all hover:scale-105 hover:shadow-[0_20px_60px_-15px_rgba(139,92,246,0.6)]">
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-8 reveal-advanced active" style={{ transitionDelay: '300ms' }}>
+                            <Link to="/contact" className="w-full sm:w-auto relative group overflow-hidden px-8 md:px-14 py-5 md:py-6 accent-gradient rounded-xl md:rounded-[2rem] text-white font-brand font-black text-xs md:text-sm uppercase tracking-widest transition-all hover:scale-105 hover:shadow-[0_20px_60px_-15px_rgba(139,92,246,0.6)] text-center">
                                 <span className="relative z-10">Start Your Audit</span>
                                 <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[25deg]"></div>
                             </Link>
 
-                            <Link to="/geo-services" className="px-14 py-6 glass border-2 border-wispr-dark/20 rounded-[2rem] text-wispr-dark font-brand font-black text-sm uppercase tracking-widest hover:bg-wispr-dark hover:text-white hover:border-wispr-dark transition-all duration-500 shadow-sm">
+                            <Link to="/geo-services" className="w-full sm:w-auto px-8 md:px-14 py-5 md:py-6 glass border-2 border-wispr-dark/20 rounded-xl md:rounded-[2rem] text-wispr-dark font-brand font-black text-xs md:text-sm uppercase tracking-widest hover:bg-wispr-dark hover:text-white hover:border-wispr-dark transition-all duration-500 shadow-sm text-center">
                                 Explore Services
                             </Link>
                         </div>
@@ -312,32 +312,32 @@ const Home: React.FC = () => {
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch">
                             {SERVICES.map((service, i) => (
-                                <div key={i} className="bg-white p-12 md:p-16 rounded-[3.5rem] border border-wispr-dark/5 flex flex-col hover:border-wispr-purple/40 transition-all duration-700 hover:-translate-y-3 group reveal-advanced shadow-[0_20px_50px_-15px_rgba(0,0,0,0.03)] hover:shadow-[0_40px_80px_-20px_rgba(139,92,246,0.15)] relative overflow-hidden" style={{ transitionDelay: `${i * 150}ms` }}>
+                                <div key={i} className="bg-white p-8 md:p-16 rounded-[2.5rem] md:rounded-[3.5rem] border border-wispr-dark/5 flex flex-col hover:bg-wispr-purple hover:border-wispr-purple transition-all duration-700 hover:-translate-y-3 group reveal-advanced shadow-[0_20px_50px_-15px_rgba(0,0,0,0.03)] hover:shadow-[0_40px_80px_-20px_rgba(139,92,246,0.15)] relative overflow-hidden" style={{ transitionDelay: `${i * 150}ms` }}>
                                     {/* Number Indicator */}
-                                    <div className="absolute top-12 right-12 text-wispr-dark/5 font-lander text-8xl md:text-9xl font-black select-none group-hover:text-wispr-purple/10 transition-colors duration-700 pointer-events-none">
+                                    <div className="absolute top-12 right-12 text-wispr-dark/5 font-lander text-8xl md:text-9xl font-black select-none group-hover:text-white/10 transition-colors duration-700 pointer-events-none">
                                         0{i + 1}
                                     </div>
 
                                     <div className="relative z-10">
-                                        <h3 className="font-lander text-3xl md:text-5xl font-bold text-wispr-dark mb-8 leading-[1.1] tracking-tight group-hover:text-wispr-purple transition-colors duration-500">
+                                        <h3 className="font-lander text-3xl md:text-5xl font-bold text-wispr-dark mb-8 leading-[1.1] tracking-tight group-hover:text-white transition-colors duration-500">
                                             {service.title}
                                         </h3>
-                                        <p className="font-sodo text-slate-600 text-lg md:text-xl mb-12 leading-relaxed flex-grow">
+                                        <p className="font-sodo text-slate-600 text-lg md:text-xl mb-12 leading-relaxed flex-grow group-hover:text-white/80 transition-colors duration-500">
                                             {service.description}
                                         </p>
-                                        <Link to={`/${service.slug}`} className="group/btn inline-flex items-center space-x-4 text-wispr-purple font-brand font-black text-[13px] uppercase tracking-[0.3em] w-fit">
+                                        <Link to={`/${service.slug}`} className="group/btn inline-flex items-center space-x-4 text-wispr-purple group-hover:text-white font-brand font-black text-[13px] uppercase tracking-[0.3em] w-fit transition-colors duration-500">
                                             <span className="relative">
                                                 Learn More
-                                                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-wispr-purple transition-all duration-500 group-hover/btn:w-full"></span>
+                                                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-wispr-purple group-hover:bg-white transition-all duration-500 group-hover/btn:w-full"></span>
                                             </span>
-                                            <div className="w-10 h-10 rounded-full border border-wispr-purple/20 flex items-center justify-center group-hover/btn:bg-wispr-purple group-hover/btn:text-white transition-all duration-500">
+                                            <div className="w-10 h-10 rounded-full border border-wispr-purple/20 group-hover:border-white/40 flex items-center justify-center group-hover/btn:bg-white group-hover/btn:text-wispr-purple transition-all duration-500">
                                                 <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
                                             </div>
                                         </Link>
                                     </div>
 
                                     {/* Accent Border Bottom */}
-                                    <div className="absolute bottom-0 left-0 h-2 bg-gradient-to-r from-wispr-purple via-wispr-purple/50 to-transparent w-0 group-hover:w-full transition-all duration-1000"></div>
+                                    <div className="absolute bottom-0 left-0 h-2 bg-gradient-to-r from-wispr-purple via-wispr-purple/50 to-transparent w-0 group-hover:w-full transition-all duration-1000 group-hover:opacity-0"></div>
                                 </div>
                             ))}
                         </div>
@@ -371,17 +371,17 @@ const Home: React.FC = () => {
                             <div className="absolute -top-16 -left-12 md:-left-20 text-wispr-purple/15 font-serif text-[280px] leading-none select-none pointer-events-none">“</div>
                             <div className="absolute -bottom-60 -right-12 md:-right-20 text-wispr-purple/15 font-serif text-[280px] leading-none select-none pointer-events-none">”</div>
 
-                            <div className="bg-gradient-to-br from-indigo-950/40 via-purple-950/60 to-wispr-purple/30 backdrop-blur-2xl p-14 md:p-28 rounded-[5rem] border border-white/10 relative overflow-hidden reveal-advanced active shadow-[0_50px_100px_-20px_rgba(0,0,0,0.8)] group-hover:border-wispr-purple/40 transition-all duration-700 animate-gradient-move bg-[length:200%_200%]">
+                            <div className="bg-gradient-to-br from-indigo-950/40 via-purple-950/60 to-wispr-purple/30 backdrop-blur-2xl p-8 md:p-28 rounded-[2.5rem] md:rounded-[5rem] border border-white/10 relative overflow-hidden reveal-advanced active shadow-[0_50px_100px_-20px_rgba(0,0,0,0.8)] group-hover:border-wispr-purple/40 transition-all duration-700 animate-gradient-move bg-[length:200%_200%]">
                                 {/* Animated Inner Glow */}
                                 <div className="absolute inset-0 bg-gradient-to-tr from-wispr-purple/10 via-transparent to-purple-600/5 opacity-50"></div>
 
                                 <blockquote className="relative z-10 text-center">
-                                    <p className="font-lander text-4xl md:text-6xl font-medium text-white mb-20 leading-[1.05] tracking-tight italic">
+                                    <p className="font-lander text-2xl md:text-6xl font-medium text-white mb-10 md:mb-20 leading-[1.2] md:leading-[1.05] tracking-tight italic">
                                         "We saw <span className="text-wispr-purple drop-shadow-[0_0_15px_rgba(139,92,246,0.5)]">47% more brand mentions</span> in AI answers within 90 days. Traditional SEO wasn't translating to ChatGPT visibility. {COMPANY_NAME}'s strategy solved what others couldn't."
                                     </p>
 
-                                    <footer className="flex flex-col items-center gap-10">
-                                        <div className="h-px w-24 bg-gradient-to-r from-transparent via-wispr-purple/50 to-transparent"></div>
+                                    <footer className="flex flex-col items-center gap-6 md:gap-10">
+                                        <div className="h-px w-16 md:w-24 bg-gradient-to-r from-transparent via-wispr-purple/50 to-transparent"></div>
                                     </footer>
                                 </blockquote>
                             </div>
@@ -390,24 +390,24 @@ const Home: React.FC = () => {
                 </section>
 
                 {/* Final CTA - CREAM */}
-                <section className="py-48 px-6 bg-wispr-cream">
-                    <div className="max-w-5xl mx-auto bg-white p-20 md:p-32 rounded-[5rem] border-4 border-wispr-dark text-center overflow-hidden relative reveal-advanced active shadow-2xl">
+                <section className="py-24 md:py-48 px-4 md:px-6 bg-wispr-cream">
+                    <div className="max-w-5xl mx-auto bg-white p-10 md:p-32 rounded-[2.5rem] md:rounded-[5rem] border-4 border-wispr-dark text-center overflow-hidden relative reveal-advanced active shadow-2xl">
                         <div className="absolute -top-32 -left-32 w-96 h-96 bg-purple-800/10 blur-[150px] rounded-full"></div>
                         <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-purple-600/10 blur-[150px] rounded-full"></div>
 
-                        <h2 className="font-lander text-4xl md:text-8xl font-bold text-wispr-dark mb-10 relative z-10 leading-[0.9] tracking-tighter">
+                        <h2 className="font-lander text-4xl md:text-8xl font-bold text-wispr-dark mb-8 md:mb-10 relative z-10 leading-[1.1] md:leading-[0.9] tracking-tighter">
                             Stop being <span className="text-gradient">invisible</span> to AI search engines.
                         </h2>
-                        <p className="font-sodo text-xl md:text-2xl text-slate-600 mb-16 relative z-10 max-w-2xl mx-auto leading-relaxed">
+                        <p className="font-sodo text-lg md:text-2xl text-slate-600 mb-10 md:mb-16 relative z-10 max-w-2xl mx-auto leading-relaxed">
                             Join 500+ brands that have secured their place in the future of conversational search with {COMPANY_NAME}.
                         </p>
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-10 relative z-10">
-                            <Link to="/contact" className="px-12 py-6 accent-gradient rounded-2xl text-white font-brand font-black text-sm uppercase tracking-widest hover:scale-110 hover:rotate-[-2deg] transition-all shadow-2xl shadow-purple-700/30">
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-10 relative z-10">
+                            <Link to="/contact" className="w-full sm:w-auto px-8 md:px-12 py-5 md:py-6 accent-gradient rounded-xl md:rounded-2xl text-white font-brand font-black text-xs md:text-sm uppercase tracking-widest hover:scale-105 sm:hover:scale-110 sm:hover:rotate-[-2deg] transition-all shadow-xl md:shadow-2xl shadow-purple-700/30">
                                 Schedule Your Free Audit
                             </Link>
-                            <Link to="/education" className="px-12 py-6 border-2 border-wispr-dark/20 rounded-4xl text-wispr-dark font-brand font-black text-sm uppercase tracking-widest hover:bg-wispr-dark hover:text-white hover:border-wispr-dark transition-all flex items-center space-x-4 group shadow-sm">
+                            <Link to="/education" className="w-full sm:w-auto px-8 md:px-12 py-5 md:py-6 border-2 border-wispr-dark/20 rounded-xl md:rounded-4xl text-wispr-dark font-brand font-black text-xs md:text-sm uppercase tracking-widest hover:bg-wispr-dark hover:text-white hover:border-wispr-dark transition-all flex items-center justify-center space-x-4 group shadow-sm">
                                 <span>Read Our GEO Guide</span>
-                                <ArrowRight size={22} className="group-hover:translate-x-3 transition-transform" />
+                                <ArrowRight size={20} className="group-hover:translate-x-2 md:group-hover:translate-x-3 transition-transform" />
                             </Link>
                         </div>
                     </div>

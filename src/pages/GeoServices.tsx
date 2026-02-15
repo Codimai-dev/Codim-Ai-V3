@@ -41,7 +41,7 @@ const GeoServices: React.FC = () => {
 
             <main className="flex-grow">
                 {/* Hero Section */}
-                <section className="relative pt-32 pb-40 px-6 overflow-hidden bg-wispr-cream">
+                <section className="relative pt-32 md:pt-44 pb-40 px-6 overflow-hidden bg-wispr-cream">
                     {/* Background Refined Gradients & Mesh */}
                     <div className="absolute inset-0 overflow-hidden pointer-events-none">
                         <div className="absolute top-[-10%] left-[-5%] w-[50%] h-[50%] bg-wispr-purple/15 blur-[120px] rounded-full animate-float opacity-70"></div>
@@ -67,10 +67,10 @@ const GeoServices: React.FC = () => {
                                 <p className="font-sodo text-xl text-slate-600 mb-12 leading-relaxed max-w-xl">
                                     {service.longDescription}
                                 </p>
-                                <div className="flex flex-wrap gap-6">
+                                <div className="flex flex-wrap gap-4 md:gap-6">
                                     <button
                                         onClick={openBookModal}
-                                        className="relative group overflow-hidden px-12 py-6 accent-gradient rounded-[2rem] text-white font-brand font-black text-sm uppercase tracking-widest transition-all hover:scale-105 hover:shadow-[0_20px_60px_-15px_rgba(139,92,246,0.5)]"
+                                        className="w-full sm:w-auto relative group overflow-hidden px-8 md:px-12 py-5 md:py-6 accent-gradient rounded-xl md:rounded-[2rem] text-white font-brand font-black text-xs md:text-sm uppercase tracking-widest transition-all hover:scale-105 hover:shadow-[0_20px_60px_-15px_rgba(139,92,246,0.5)]"
                                     >
                                         <span className="relative z-10">Start Your {service.id.toUpperCase()} Strategy</span>
                                         <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[25deg]"></div>
@@ -79,7 +79,7 @@ const GeoServices: React.FC = () => {
                             </div>
 
                             <div className="relative reveal-advanced active" style={{ transitionDelay: '200ms' }}>
-                                <div className="bg-white p-12 md:p-16 rounded-[4rem] border border-wispr-dark/5 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.08)] relative overflow-hidden group">
+                                <div className="bg-white p-8 md:p-16 rounded-[2.5rem] md:rounded-[4rem] border border-wispr-dark/5 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.08)] relative overflow-hidden group">
                                     <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-wispr-purple to-transparent opacity-50"></div>
                                     <h3 className="font-lander text-3xl font-bold text-wispr-dark mb-10">Why Choose {COMPANY_NAME}?</h3>
                                     <div className="space-y-8">
@@ -149,7 +149,7 @@ const GeoServices: React.FC = () => {
                             </p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                            <div className="bg-white p-12 rounded-[4rem] border border-wispr-dark/5 shadow-xl reveal-advanced">
+                            <div className="bg-white p-8 md:p-12 rounded-[2.5rem] md:rounded-[4rem] border border-wispr-dark/5 shadow-xl reveal-advanced">
                                 <h3 className="font-brand font-black text-xs uppercase tracking-[0.4em] text-slate-400 mb-12">Traditional SEO Includes</h3>
                                 <ul className="space-y-6">
                                     {[
@@ -168,7 +168,7 @@ const GeoServices: React.FC = () => {
                                     </li>
                                 </ul>
                             </div>
-                            <div className="bg-wispr-dark p-12 rounded-[4rem] shadow-[0_40px_100px_-20px_rgba(109,40,217,0.3)] relative overflow-hidden reveal-advanced group">
+                            <div className="bg-wispr-dark p-8 md:p-12 rounded-[2.5rem] md:rounded-[4rem] shadow-[0_40px_100px_-20px_rgba(109,40,217,0.3)] relative overflow-hidden reveal-advanced group">
                                 <div className="absolute inset-0 grid-bg-dark opacity-10"></div>
                                 <h3 className="font-brand font-black text-xs uppercase tracking-[0.4em] text-wispr-purple mb-12 relative z-10">{service.id.toUpperCase()} Strategy Includes</h3>
                                 <ul className="space-y-8 relative z-10">
@@ -197,21 +197,21 @@ const GeoServices: React.FC = () => {
                 </div>
 
                 {/* Final CTA */}
-                <section className="py-48 px-6 bg-wispr-cream">
-                    <div className="max-w-5xl mx-auto bg-white p-20 md:p-32 rounded-[5rem] border-4 border-wispr-dark text-center overflow-hidden relative reveal-advanced shadow-2xl">
+                <section className="py-24 md:py-48 px-4 md:px-6 bg-wispr-cream">
+                    <div className="max-w-5xl mx-auto bg-white p-10 md:p-32 rounded-[2.5rem] md:rounded-[5rem] border-4 border-wispr-dark text-center overflow-hidden relative reveal-advanced shadow-2xl">
                         <div className="absolute -top-32 -left-32 w-96 h-96 bg-purple-800/10 blur-[150px] rounded-full"></div>
                         <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-purple-600/10 blur-[150px] rounded-full"></div>
 
-                        <h2 className="font-lander text-4xl md:text-8xl font-bold text-wispr-dark mb-10 relative z-10 leading-[0.9] tracking-tighter">
+                        <h2 className="font-lander text-4xl md:text-8xl font-bold text-wispr-dark mb-8 md:mb-10 relative z-10 leading-[1.1] md:leading-[0.9] tracking-tighter">
                             Ready to secure your <span className="text-gradient">AI visibility</span>?
                         </h2>
-                        <p className="font-sodo text-xl md:text-2xl text-slate-600 mb-16 relative z-10 max-w-2xl mx-auto leading-relaxed">
+                        <p className="font-sodo text-lg md:text-2xl text-slate-600 mb-10 md:mb-16 relative z-10 max-w-2xl mx-auto leading-relaxed">
                             Join the elite brands that have mastered the generation search landscape.
                         </p>
                         <div className="flex justify-center relative z-10">
                             <button
                                 onClick={openBookModal}
-                                className="px-14 py-6 accent-gradient rounded-2xl text-white font-brand font-black text-sm uppercase tracking-widest hover:scale-110 hover:rotate-[-2deg] transition-all shadow-2xl shadow-purple-700/30 flex items-center space-x-4"
+                                className="w-full sm:w-auto px-10 md:px-14 py-5 md:py-6 accent-gradient rounded-xl md:rounded-2xl text-white font-brand font-black text-xs md:text-sm uppercase tracking-widest hover:scale-105 sm:hover:scale-110 sm:hover:rotate-[-2deg] transition-all shadow-xl md:shadow-2xl shadow-purple-700/30 flex items-center justify-center space-x-4"
                             >
                                 <span>Schedule Your Audit</span>
                                 <ArrowRight size={20} />

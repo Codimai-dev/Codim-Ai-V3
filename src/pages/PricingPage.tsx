@@ -28,7 +28,7 @@ const PricingPage: React.FC = () => {
         <div className="min-h-screen bg-wispr-cream selection:bg-wispr-purple selection:text-white flex flex-col">
             <Navbar onBookDemo={openBookModal} />
 
-            <main className="flex-grow pt-28">
+            <main className="flex-grow pt-32 md:pt-44">
                 {/* We use the existing Pricing component but wrapped in a page layout */}
                 <Pricing theme="light" onBookDemo={openBookModal} />
 
