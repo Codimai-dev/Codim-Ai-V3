@@ -19,7 +19,7 @@ import Footer from '../../components/Footer';
 import BookDemoModal from '../../components/BookDemoModal';
 import PrivacyPolicyModal from '../../components/PrivacyPolicyModal';
 import TermsConditionsModal from '../../components/TermsConditionsModal';
-import { COMPANY_NAME, SERVICES } from '../../constants';
+import { COMPANY_NAME } from '../../constants';
 
 // Swiper imports
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -177,10 +177,10 @@ const Home: React.FC = () => {
                         </p>
 
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-8 reveal-advanced active" style={{ transitionDelay: '300ms' }}>
-                            <Link to="/contact" className="w-full sm:w-auto relative group overflow-hidden px-8 md:px-14 py-5 md:py-6 accent-gradient rounded-xl md:rounded-[2rem] text-white font-brand font-black text-xs md:text-sm uppercase tracking-widest transition-all hover:scale-105 hover:shadow-[0_20px_60px_-15px_rgba(139,92,246,0.6)] text-center">
+                            <button onClick={openBookModal} className="w-full sm:w-auto relative group overflow-hidden px-8 md:px-14 py-5 md:py-6 accent-gradient rounded-xl md:rounded-[2rem] text-white font-brand font-black text-xs md:text-sm uppercase tracking-widest transition-all hover:scale-105 hover:shadow-[0_20px_60px_-15px_rgba(139,92,246,0.6)] text-center cursor-pointer">
                                 <span className="relative z-10">Start Your Audit</span>
                                 <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[25deg]"></div>
-                            </Link>
+                            </button>
 
                             <Link to="/geo-services" className="w-full sm:w-auto px-8 md:px-14 py-5 md:py-6 glass border-2 border-wispr-dark/20 rounded-xl md:rounded-[2rem] text-wispr-dark font-brand font-black text-xs md:text-sm uppercase tracking-widest hover:bg-wispr-dark hover:text-white hover:border-wispr-dark transition-all duration-500 shadow-sm text-center">
                                 Explore Services
@@ -447,9 +447,9 @@ const Home: React.FC = () => {
                             Join 500+ brands that have secured their place in the future of conversational search with {COMPANY_NAME}.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-10 relative z-10">
-                            <Link to="/contact" className="w-full sm:w-auto px-8 md:px-12 py-5 md:py-6 accent-gradient rounded-xl md:rounded-2xl text-white font-brand font-black text-xs md:text-sm uppercase tracking-widest hover:scale-105 sm:hover:scale-110 sm:hover:rotate-[-2deg] transition-all shadow-xl md:shadow-2xl shadow-purple-700/30">
+                            <button onClick={openBookModal} className="w-full sm:w-auto px-8 md:px-12 py-5 md:py-6 accent-gradient rounded-xl md:rounded-2xl text-white font-brand font-black text-xs md:text-sm uppercase tracking-widest hover:scale-105 sm:hover:scale-110 sm:hover:rotate-[-2deg] transition-all shadow-xl md:shadow-2xl shadow-purple-700/30 cursor-pointer">
                                 Schedule Your Free Audit
-                            </Link>
+                            </button>
                             <Link to="/education" className="w-full sm:w-auto px-8 md:px-12 py-5 md:py-6 border-2 border-wispr-dark/20 rounded-xl md:rounded-4xl text-wispr-dark font-brand font-black text-xs md:text-sm uppercase tracking-widest hover:bg-wispr-dark hover:text-white hover:border-wispr-dark transition-all flex items-center justify-center space-x-4 group shadow-sm">
                                 <span>Read Our GEO Guide</span>
                                 <ArrowRight size={20} className="group-hover:translate-x-2 md:group-hover:translate-x-3 transition-transform" />
