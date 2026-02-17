@@ -141,7 +141,7 @@ const Home: React.FC = () => {
 
             <main>
                 {/* Hero Section - PREMIUM ENHANCED */}
-                <section className="relative min-h-[85vh] flex items-center pt-32 md:pt-44 pb-0 px-6 overflow-hidden bg-wispr-cream">
+                <section className="relative min-h-[85vh] flex items-center pt-20 md:pt-44 pb-0 px-6 overflow-hidden bg-wispr-cream">
                     {/* Background Refined Gradients & Mesh */}
                     <div className="absolute inset-0 overflow-hidden pointer-events-none">
                         <div className="absolute top-[-10%] left-[-5%] w-[50%] h-[50%] bg-wispr-purple/15 blur-[120px] rounded-full animate-float opacity-70"></div>
@@ -196,7 +196,7 @@ const Home: React.FC = () => {
                 </section>
 
                 {/* Stats Marquee Section - WHITE */}
-                <section className="bg-white border-y border-wispr-dark/5 overflow-hidden py-4 md:py-8 mb-20">
+                <section className="bg-white border-y border-wispr-dark/5 overflow-hidden py-4 md:py-8 mb-10 md:mb-20">
                     <div className="animate-marquee flex items-center">
                         <StatCard val="500+" label="Brands Optimized" delay={0} Icon={Globe} />
                         <StatCard val="10+" label="AI Platforms Tracked" delay={100} Icon={Cpu} />
@@ -216,7 +216,7 @@ const Home: React.FC = () => {
 
 
                 {/* Problem/Solution Section - DARK (Even) */}
-                <section className="py-32 px-6 relative overflow-hidden bg-wispr-dark border-y border-white/5">
+                <section className="py-16 md:py-32 px-6 relative overflow-hidden bg-wispr-dark border-y border-white/5">
                     <div className="absolute inset-0 grid-bg-dark opacity-20"></div>
                     <div className="max-w-7xl mx-auto relative z-10">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
@@ -290,7 +290,7 @@ const Home: React.FC = () => {
                 </section>
 
                 {/* Services Overview - PREMIUM ENHANCED */}
-                <section className="py-40 px-6 bg-wispr-cream relative overflow-hidden">
+                <section className="py-12 md:py-24 px-6 bg-wispr-cream relative overflow-hidden">
                     {/* Background Decorative Elements */}
                     <div className="absolute inset-0 pointer-events-none">
                         <div className="absolute top-1/4 -right-20 w-[40%] h-[40%] bg-blue-400/5 blur-[120px] rounded-full animate-float opacity-50"></div>
@@ -299,7 +299,7 @@ const Home: React.FC = () => {
                     </div>
 
                     <div className="max-w-7xl mx-auto relative z-10">
-                        <div className="text-center mb-24 reveal-advanced active">
+                        <div className="text-center mb-16 reveal-advanced active">
                             <div className="inline-flex items-center space-x-3 px-5 py-2 rounded-full bg-wispr-dark text-wispr-cream mb-8 shadow-xl">
                                 <span className="w-1.5 h-1.5 bg-wispr-purple rounded-full animate-pulse"></span>
                                 <span className="text-[10px] font-brand font-black uppercase tracking-[0.4em]">Proprietary Framework</span>
@@ -311,7 +311,7 @@ const Home: React.FC = () => {
                                 We specialize in the technical methodologies required for visibility in the next generation of generative search engines.
                             </p>
                         </div>
-                        <div className="mt-20 reveal-advanced active overflow-hidden">
+                        <div className="mt-10 reveal-advanced active overflow-hidden">
                             <h3 className="text-center font-brand font-black text-[10px] uppercase tracking-[0.5em] text-wispr-dark/40 mb-12">
                                 Trusted by Industry Leaders & Partners
                             </h3>
@@ -356,7 +356,7 @@ const Home: React.FC = () => {
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch mt-32">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch mt-8 md:mt-12">
                             {/* {SERVICES.map((service, i) => (
                                 <div key={i} className="bg-white p-8 md:p-16 rounded-[2.5rem] md:rounded-[3.5rem] border border-wispr-dark/5 flex flex-col hover:bg-wispr-purple hover:border-wispr-purple transition-all duration-700 hover:-translate-y-3 group reveal-advanced shadow-[0_20px_50px_-15px_rgba(0,0,0,0.03)] hover:shadow-[0_40px_80px_-20px_rgba(139,92,246,0.15)] relative overflow-hidden" style={{ transitionDelay: `${i * 150}ms` }}>
                                     
@@ -390,7 +390,7 @@ const Home: React.FC = () => {
                 </section>
 
                 {/* Trust & Testimonial - PREMIUM REDESIGN */}
-                <section className="py-44 px-6 bg-black relative overflow-hidden">
+                <section className="py-16 md:py-28 px-6 bg-black relative overflow-hidden">
                     {/* Background Ambient Glows - Enhanced */}
                     <div className="absolute inset-0 pointer-events-none">
                         <div className="absolute top-[-10%] left-[-5%] w-[60%] h-[60%] bg-wispr-purple/10 blur-[150px] rounded-full animate-float opacity-40"></div>
@@ -401,7 +401,7 @@ const Home: React.FC = () => {
                     </div>
 
                     <div className="max-w-6xl mx-auto relative z-10">
-                        <div className="text-center mb-20 reveal-advanced active">
+                        <div className="text-center mb-12 reveal-advanced active">
                             <div className="inline-flex items-center space-x-3 px-6 py-2 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-md">
                                 <span className="relative flex h-2 w-2">
                                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-wispr-purple opacity-75"></span>
@@ -416,12 +416,12 @@ const Home: React.FC = () => {
                             <div className="absolute -top-16 -left-12 md:-left-20 text-wispr-purple/15 font-serif text-[280px] leading-none select-none pointer-events-none">“</div>
                             <div className="absolute -bottom-60 -right-12 md:-right-20 text-wispr-purple/15 font-serif text-[280px] leading-none select-none pointer-events-none">”</div>
 
-                            <div className="bg-gradient-to-br from-indigo-950/40 via-purple-950/60 to-wispr-purple/30 backdrop-blur-2xl p-8 md:p-28 rounded-[2.5rem] md:rounded-[5rem] border border-white/10 relative overflow-hidden reveal-advanced active shadow-[0_50px_100px_-20px_rgba(0,0,0,0.8)] group-hover:border-wispr-purple/40 transition-all duration-700 animate-gradient-move bg-[length:200%_200%]">
+                            <div className="bg-gradient-to-br from-indigo-950/40 via-purple-950/60 to-wispr-purple/30 backdrop-blur-2xl p-8 md:p-20 rounded-[2.5rem] md:rounded-[5rem] border border-white/10 relative overflow-hidden reveal-advanced active shadow-[0_50px_100px_-20px_rgba(0,0,0,0.8)] group-hover:border-wispr-purple/40 transition-all duration-700 animate-gradient-move bg-[length:200%_200%]">
                                 {/* Animated Inner Glow */}
                                 <div className="absolute inset-0 bg-gradient-to-tr from-wispr-purple/10 via-transparent to-purple-600/5 opacity-50"></div>
 
                                 <blockquote className="relative z-10 text-center">
-                                    <p className="font-lander text-2xl md:text-6xl font-medium text-white mb-10 md:mb-20 leading-[1.2] md:leading-[1.05] tracking-tight italic">
+                                    <p className="font-lander text-2xl md:text-5xl font-medium text-white mb-8 md:mb-12 leading-[1.2] md:leading-[1.05] tracking-tight italic">
                                         "We saw <span className="text-wispr-purple drop-shadow-[0_0_15px_rgba(139,92,246,0.5)]">47% more brand mentions</span> in AI answers within 90 days. Traditional SEO wasn't translating to ChatGPT visibility. {COMPANY_NAME}'s strategy solved what others couldn't."
                                     </p>
 
@@ -435,7 +435,7 @@ const Home: React.FC = () => {
                 </section>
 
                 {/* Final CTA - CREAM */}
-                <section className="py-12 md:py-20 px-4 md:px-6 bg-wispr-cream">
+                <section className="py-10 md:py-20 px-4 md:px-6 bg-wispr-cream">
                     <div className="max-w-5xl mx-auto bg-white p-10 md:p-32 rounded-[2.5rem] md:rounded-[5rem] text-center overflow-hidden relative reveal-advanced active shadow-2xl">
                         <div className="absolute -top-32 -left-32 w-96 h-96 bg-purple-800/10 blur-[150px] rounded-full"></div>
                         <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-purple-600/10 blur-[150px] rounded-full"></div>

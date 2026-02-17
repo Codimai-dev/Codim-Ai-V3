@@ -28,12 +28,12 @@ const PricingPage: React.FC = () => {
         <div className="min-h-screen bg-wispr-cream selection:bg-wispr-purple selection:text-white flex flex-col">
             <Navbar onBookDemo={openBookModal} />
 
-            <main className="flex-grow pt-32 md:pt-44">
+            <main className="flex-grow pt-20 md:pt-44">
                 {/* We use the existing Pricing component but wrapped in a page layout */}
                 <Pricing theme="light" onBookDemo={openBookModal} />
 
                 {/* Additional context for the pricing page if needed */}
-                <section className="bg-wispr-dark py-32 px-6">
+                <section className="bg-wispr-dark py-16 md:py-32 px-6">
                     <div className="max-w-4xl mx-auto text-center reveal-advanced active">
                         <h2 className="font-lander text-4xl md:text-6xl text-white mb-8">Visibility with AI</h2>
                         <p className="text-slate-400 text-xl font-sodo mb-12">

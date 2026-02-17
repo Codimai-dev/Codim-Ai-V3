@@ -12,7 +12,7 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ onPrivacyClick, onTermsClick }) => {
     return (
-        <footer className="py-24 bg-wispr-dark relative z-10 border-t border-white/5">
+        <footer className="py-12 md:py-20 bg-wispr-dark relative z-10 border-t border-white/5">
             <div className="max-w-[1200px] mx-auto px-6">
                 <div className="flex md:flex-row justify-between items-center gap-16 mb-20 text-left flex-wrap">
                     {/* Brand Section */}

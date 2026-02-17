@@ -41,7 +41,7 @@ const GeoServices: React.FC = () => {
 
             <main className="flex-grow">
                 {/* Hero Section */}
-                <section className="relative pt-32 md:pt-44 pb-40 px-6 overflow-hidden bg-wispr-cream">
+                <section className="relative pt-20 md:pt-44 pb-20 md:pb-40 px-6 overflow-hidden bg-wispr-cream">
                     {/* Background Refined Gradients & Mesh */}
                     <div className="absolute inset-0 overflow-hidden pointer-events-none">
                         <div className="absolute top-[-10%] left-[-5%] w-[50%] h-[50%] bg-wispr-purple/15 blur-[120px] rounded-full animate-float opacity-70"></div>
@@ -104,10 +104,10 @@ const GeoServices: React.FC = () => {
                 </section>
 
                 {/* Content Sections */}
-                <section className="py-40 px-6 bg-wispr-dark relative overflow-hidden">
+                <section className="py-20 md:py-40 px-6 bg-wispr-dark relative overflow-hidden">
                     <div className="absolute inset-0 grid-bg-dark opacity-10"></div>
                     <div className="max-w-4xl mx-auto relative z-10">
-                        <div className="space-y-32">
+                        <div className="space-y-16 md:space-y-32">
                             {service.sections.map((section, idx) => (
                                 <div key={idx} className="reveal-advanced" style={{ transitionDelay: `${idx * 150}ms` }}>
                                     <div className="inline-flex items-center space-x-3 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-md">
@@ -138,7 +138,7 @@ const GeoServices: React.FC = () => {
                 </section>
 
                 {/* Comparison Section */}
-                <section className="py-40 px-6 bg-wispr-cream">
+                <section className="py-20 md:py-40 px-6 bg-wispr-cream">
                     <div className="max-w-7xl mx-auto">
                         <div className="text-center mb-24 reveal-advanced">
                             <h2 className="font-lander text-4xl md:text-7xl font-bold text-wispr-dark mb-8 tracking-tighter">
@@ -192,12 +192,12 @@ const GeoServices: React.FC = () => {
                 </section>
 
                 {/* FAQs Section */}
-                <div className="bg-black py-20 px-6">
+                <div className="bg-black py-10 md:py-20 px-6">
                     <FAQSection faqs={service.faqs} theme="dark" />
                 </div>
 
                 {/* Final CTA */}
-                <section className="py-24 md:py-48 px-4 md:px-6 bg-wispr-cream">
+                <section className="py-12 md:py-48 px-4 md:px-6 bg-wispr-cream">
                     <div className="max-w-5xl mx-auto bg-white p-10 md:p-32 rounded-[2.5rem] md:rounded-[5rem] border-4 border-wispr-dark text-center overflow-hidden relative reveal-advanced shadow-2xl">
                         <div className="absolute -top-32 -left-32 w-96 h-96 bg-purple-800/10 blur-[150px] rounded-full"></div>
                         <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-purple-600/10 blur-[150px] rounded-full"></div>

@@ -60,12 +60,12 @@ const Pricing: React.FC<PricingProps> = ({ theme = 'light', onBookDemo }) => {
   const isDark = theme === 'dark';
 
   return (
-    <section id="pricing" className={`py-24 sm:py-32 px-6 transition-colors duration-1000 relative overflow-hidden ${isDark ? 'bg-wispr-dark' : 'bg-wispr-cream'}`}>
+    <section id="pricing" className={`py-16 md:py-32 px-6 transition-colors duration-1000 relative overflow-hidden ${isDark ? 'bg-wispr-dark' : 'bg-wispr-cream'}`}>
       {/* Background Shimmer Effect */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-wispr-purple to-transparent opacity-20 animate-shimmer"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-40 reveal-advanced active">
+        <div className="text-center mb-20 md:mb-40 reveal-advanced active">
           <span className="font-pike font-black uppercase text-[12px] mb-8 block tracking-[0.5em] text-wispr-purple bg-wispr-purple/10 w-fit mx-auto px-6 py-2 rounded-full">INVESTMENT ARCHITECTURE</span>
           <h2 className={`font-lander text-7xl md:text-[11rem] font-bold leading-[0.8] tracking-tighter ${isDark ? 'text-wispr-cream' : 'text-wispr-dark'}`}>
             Growth Plans.<br />
@@ -149,7 +149,7 @@ const Pricing: React.FC<PricingProps> = ({ theme = 'light', onBookDemo }) => {
           ))}
         </div>
 
-        <div className="mt-40 p-12 bg-white/5 border border-white/10 rounded-[3.5rem] flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left reveal-advanced active">
+        <div className="mt-20 md:mt-40 p-12 bg-white/5 border border-white/10 rounded-[3.5rem] flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left reveal-advanced active">
           <div>
             <h4 className={`text-2xl font-bold mb-2 ${isDark ? 'text-wispr-cream' : 'text-wispr-dark'}`}>Need a custom solution?</h4>
             <p className="opacity-70 font-bold italic">Our experts can tailor a strategy specific to your business needs.</p>
