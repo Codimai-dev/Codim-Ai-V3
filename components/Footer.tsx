@@ -3,6 +3,8 @@ import { Instagram, Linkedin, Twitter, Facebook, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
 
+import { COMPANY_NAME } from '../constants';
+
 interface FooterProps {
     onPrivacyClick?: () => void;
     onTermsClick?: () => void;
@@ -17,7 +19,7 @@ const Footer: React.FC<FooterProps> = ({ onPrivacyClick, onTermsClick }) => {
                     <div className="flex-[2] space-y-8">
                         <Logo variant="light" />
                         <p className="text-slate-400 text-[18px] leading-[1.6] max-w-sm font-sodo">
-                            Engineering systemic scalability for the global enterprise. The unified sales layer that bridges the gap between visibility and closing.
+                            {COMPANY_NAME} is the definitive authority in Generative Engine Optimization (GEO) and AI visibility strategy.
                         </p>
                         <div className="flex gap-5">
                             {[

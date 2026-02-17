@@ -154,12 +154,12 @@ const Home: React.FC = () => {
 
                     <div className="max-w-7xl mx-auto text-center relative z-10 w-full">
                         {/* New Premium Badge */}
-                        <div className="inline-flex items-center space-x-3 px-6 py-2 glass border border-wispr-purple/20 rounded-full mb-8 reveal-advanced active group cursor-default shadow-sm transition-all hover:border-wispr-purple/40  bg-black">
-                            <div className="relative ">
+                        <div className="inline-flex items-center space-x-2 md:space-x-3 px-3 py-1 md:px-6 md:py-2 glass border border-wispr-purple/20 rounded-full mb-8 reveal-advanced active group cursor-default shadow-sm transition-all hover:border-wispr-purple/40 bg-black">
+                            <div className="relative">
                                 <span className="absolute inset-0 bg-wispr-purple/30 rounded-full blur-sm group-hover:blur-md transition-all"></span>
-                                <span className="relative block w-2 h-2 bg-wispr-purple rounded-full animate-pulse"></span>
+                                <span className="relative block w-1 h-1 md:w-2 md:h-2 bg-wispr-purple rounded-full animate-pulse"></span>
                             </div>
-                            <span className="text-[15px] font-brand font-black uppercase tracking-[0.5em] text-wispr-purple/70 group-hover:text-wispr-purple transition-colors ">
+                            <span className="text-[9px] md:text-[15px] font-brand font-black uppercase tracking-[0.2em] md:tracking-[0.5em] text-white group-hover:text-wispr-purple transition-colors">
                                 Defining AI Visibility
                             </span>
                         </div>
@@ -247,6 +247,7 @@ const Home: React.FC = () => {
                                     grabCursor={true}
                                     centeredSlides={true}
                                     slidesPerView={'auto'}
+                                    loop={true}
                                     initialSlide={1}
                                     coverflowEffect={{
                                         rotate: 40,
@@ -310,10 +311,55 @@ const Home: React.FC = () => {
                                 We specialize in the technical methodologies required for visibility in the next generation of generative search engines.
                             </p>
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch">
-                            {SERVICES.map((service, i) => (
+                        <div className="mt-20 reveal-advanced active overflow-hidden">
+                            <h3 className="text-center font-brand font-black text-[10px] uppercase tracking-[0.5em] text-wispr-dark/40 mb-12">
+                                Trusted by Industry Leaders & Partners
+                            </h3>
+                            <div className="relative flex items-center">
+                                <div className="animate-marquee flex items-center gap-12 md:gap-24 py-8">
+                                    {[
+                                        'vendors/vendor-1.jpg',
+                                        'vendors/vendor-2.png',
+                                        'vendors/vendor-3.jpg',
+                                        'vendors/vendor-5.jpg',
+                                        'vendors/vendor-8.jpg',
+                                    ].map((img, i) => (
+                                        <div key={`v1-${i}`} className="flex items-center justify-center shrink-0">
+                                            <div className="h-16 md:h-24 w-32 md:w-48 flex items-center justify-center">
+                                                <img
+                                                    src={`${import.meta.env.BASE_URL}${img}`}
+                                                    alt={`Vendor Partner ${i + 1}`}
+                                                    className="max-h-full max-w-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-500 contrast-125 brightness-110"
+                                                />
+                                            </div>
+                                        </div>
+                                    ))}
+                                    {/* Duplicate for seamless marquee loop */}
+                                    {[
+                                        'vendors/vendor-1.jpg',
+                                        'vendors/vendor-2.png',
+                                        'vendors/vendor-3.jpg',
+                                        'vendors/vendor-5.jpg',
+                                        'vendors/vendor-8.jpg',
+                                    ].map((img, i) => (
+                                        <div key={`v2-${i}`} className="flex items-center justify-center shrink-0">
+                                            <div className="h-16 md:h-24 w-32 md:w-48 flex items-center justify-center">
+                                                <img
+                                                    src={`${import.meta.env.BASE_URL}${img}`}
+                                                    alt={`Vendor Partner ${i + 1}`}
+                                                    className="max-h-full max-w-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-500 contrast-125 brightness-110"
+                                                />
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch mt-32">
+                            {/* {SERVICES.map((service, i) => (
                                 <div key={i} className="bg-white p-8 md:p-16 rounded-[2.5rem] md:rounded-[3.5rem] border border-wispr-dark/5 flex flex-col hover:bg-wispr-purple hover:border-wispr-purple transition-all duration-700 hover:-translate-y-3 group reveal-advanced shadow-[0_20px_50px_-15px_rgba(0,0,0,0.03)] hover:shadow-[0_40px_80px_-20px_rgba(139,92,246,0.15)] relative overflow-hidden" style={{ transitionDelay: `${i * 150}ms` }}>
-                                    {/* Number Indicator */}
+                                    
                                     <div className="absolute top-12 right-12 text-wispr-dark/5 font-lander text-8xl md:text-9xl font-black select-none group-hover:text-white/10 transition-colors duration-700 pointer-events-none">
                                         0{i + 1}
                                     </div>
@@ -336,10 +382,9 @@ const Home: React.FC = () => {
                                         </Link>
                                     </div>
 
-                                    {/* Accent Border Bottom */}
                                     <div className="absolute bottom-0 left-0 h-2 bg-gradient-to-r from-wispr-purple via-wispr-purple/50 to-transparent w-0 group-hover:w-full transition-all duration-1000 group-hover:opacity-0"></div>
                                 </div>
-                            ))}
+                            ))} */}
                         </div>
                     </div>
                 </section>

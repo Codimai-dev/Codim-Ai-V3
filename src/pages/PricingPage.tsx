@@ -35,9 +35,9 @@ const PricingPage: React.FC = () => {
                 {/* Additional context for the pricing page if needed */}
                 <section className="bg-wispr-dark py-32 px-6">
                     <div className="max-w-4xl mx-auto text-center reveal-advanced active">
-                        <h2 className="font-lander text-4xl md:text-6xl text-white mb-8">Ready to automate?</h2>
+                        <h2 className="font-lander text-4xl md:text-6xl text-white mb-8">Visibility with AI</h2>
                         <p className="text-slate-400 text-xl font-sodo mb-12">
-                            Join 50+ high-growth teams using CodimAI to scale their outbound infrastructure without adding headcount.
+                            Join 500+ brands that have secured their place in the future of conversational search with CodimAI.
                         </p>
                         <button
                             onClick={openBookModal}

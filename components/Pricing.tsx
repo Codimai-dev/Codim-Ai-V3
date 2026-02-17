@@ -6,8 +6,8 @@ const PLANS = [
   {
     name: "Free",
     price: "0",
-    desc: "🆓 AI Visibility Audit",
-    subDesc: "👉 Goal: Show what’s missing and why competitors are winning.",
+    desc: "AI Visibility Audit",
+    subDesc: "Goal: Show what’s missing and why competitors are winning.",
     features: [
       "Google Business Profile quick review",
       "Basic review & competitor analysis",
@@ -20,8 +20,8 @@ const PLANS = [
   {
     name: "Growth",
     price: "24,000",
-    desc: "🚀 AI Recommendation Growth",
-    subDesc: "👉 Goal: Get your brand mentioned in AI answers consistently.",
+    desc: " AI Recommendation Growth",
+    subDesc: "Goal: Get your brand mentioned in AI answers consistently.",
     features: [
       "Full Google Business Profile optimization",
       "Monthly review growth system",
@@ -37,8 +37,8 @@ const PLANS = [
   {
     name: "Custom",
     price: "Custom Pricing",
-    desc: "💎 AI Market Leader",
-    subDesc: "👉 Goal: Make your brand the default AI recommendation in your industry.",
+    desc: "AI Market Leader",
+    subDesc: "Goal: Make your brand the default AI recommendation in your industry.",
     features: [
       "Multi-location optimization",
       "8 authority blogs/month",
@@ -69,7 +69,7 @@ const Pricing: React.FC<PricingProps> = ({ theme = 'light', onBookDemo }) => {
           <span className="font-pike font-black uppercase text-[12px] mb-8 block tracking-[0.5em] text-wispr-purple bg-wispr-purple/10 w-fit mx-auto px-6 py-2 rounded-full">INVESTMENT ARCHITECTURE</span>
           <h2 className={`font-lander text-7xl md:text-[11rem] font-bold leading-[0.8] tracking-tighter ${isDark ? 'text-wispr-cream' : 'text-wispr-dark'}`}>
             Growth Plans.<br />
-            <span className="text-slate-400">Scale with AI.</span>
+            <span className="text-slate-400">AI Visibility.</span>
           </h2>
         </div>
 
