@@ -192,7 +192,7 @@ const BookDemoModal: React.FC<BookDemoModalProps> = ({
                 id={ids.title}
                 className="mt-6 font-lander text-3xl md:text-4xl font-bold tracking-tighter text-wispr-dark leading-tight"
               >
-                Let's audit your pipeline.
+                Let's audit.
               </h2>
               <p id={ids.desc} className="mt-3 text-slate-500 font-medium text-base max-w-xl">
                 Share a few details and pick a date/time. We'll reply with a calendar invite.

@@ -19,7 +19,7 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, onBack, onBackToList
         return (
           <h2
             key={index}
-            className="font-lander text-3xl md:text-5xl font-bold text-white mt-16 mb-8 tracking-tight leading-tight"
+            className="font-lander text-3xl md:text-5xl font-bold text-wispr-dark mt-16 mb-8 tracking-tight leading-tight"
           >
             {section.content}
           </h2>
@@ -28,7 +28,7 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, onBack, onBackToList
         return (
           <h3
             key={index}
-            className="font-lander text-xl md:text-2xl font-bold text-white mt-12 mb-6 tracking-tight"
+            className="font-lander text-xl md:text-2xl font-bold text-wispr-dark mt-12 mb-6 tracking-tight"
           >
             {section.content}
           </h3>
@@ -37,7 +37,7 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, onBack, onBackToList
         return (
           <p
             key={index}
-            className="font-sodo text-lg md:text-xl text-slate-400 leading-relaxed mb-6"
+            className="font-sodo text-lg md:text-xl text-slate-600 leading-relaxed mb-6"
           >
             {section.content}
           </p>
@@ -47,8 +47,8 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, onBack, onBackToList
           <ul key={index} className="space-y-4 mb-8 ml-2">
             {section.items?.map((item: string, i: number) => (
               <li key={i} className="flex items-start gap-4">
-                <div className="w-2.5 h-2.5 rounded-full bg-wispr-purple mt-2.5 shrink-0 shadow-[0_0_12px_rgba(109,40,217,0.5)]"></div>
-                <span className="font-sodo text-lg text-slate-400 leading-relaxed">{item}</span>
+                <div className="w-2.5 h-2.5 rounded-full bg-wispr-purple mt-2.5 shrink-0 shadow-[0_0_12px_rgba(109,40,217,0.2)]"></div>
+                <span className="font-sodo text-lg text-slate-600 leading-relaxed">{item}</span>
               </li>
             ))}
           </ul>
@@ -57,9 +57,9 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, onBack, onBackToList
         return (
           <blockquote
             key={index}
-            className="my-10 pl-8 border-l-4 border-wispr-purple bg-white/5 py-6 pr-8 rounded-r-3xl"
+            className="my-10 pl-8 border-l-4 border-wispr-purple bg-wispr-cream py-6 pr-8 rounded-r-3xl"
           >
-            <p className="font-lander text-xl md:text-2xl text-white font-medium italic leading-relaxed">
+            <p className="font-lander text-xl md:text-2xl text-wispr-dark font-medium italic leading-relaxed">
               {section.content}
             </p>
           </blockquote>
@@ -80,7 +80,7 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, onBack, onBackToList
   };
 
   return (
-    <div className="min-h-screen bg-wispr-cream">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative w-full pt-12 pb-10 px-6 overflow-hidden">
         {/* Background Glow */}
@@ -122,7 +122,18 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, onBack, onBackToList
                 {post.author.name.charAt(0)}
               </div>
               <div>
-                <p className="font-brand text-sm font-black text-wispr-dark">{post.author.name}</p>
+                {post.author.linkedin ? (
+                  <a
+                    href={post.author.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-brand text-sm font-black text-wispr-dark hover:text-wispr-purple transition-colors"
+                  >
+                    {post.author.name}
+                  </a>
+                ) : (
+                  <p className="font-brand text-sm font-black text-wispr-dark">{post.author.name}</p>
+                )}
                 <p className="font-brand text-[10px] font-black uppercase tracking-widest text-slate-400">
                   {post.author.role}
                 </p>
@@ -147,7 +158,7 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, onBack, onBackToList
       </section>
 
       {/* Section Breaker */}
-      <div className="w-full py-4 flex items-center justify-center overflow-hidden relative bg-wispr-cream">
+      <div className="w-full py-4 flex items-center justify-center overflow-hidden relative bg-white">
         <div className="flex items-center gap-12 w-full max-w-4xl px-6 opacity-20">
           <div className="flex-1 h-[1px] bg-wispr-dark"></div>
           <div className="flex items-center gap-2 shrink-0">
@@ -158,16 +169,16 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, onBack, onBackToList
         </div>
       </div>
 
-      {/* Article Content - DARK (Even) */}
-      <article className="py-8 md:py-16 px-6 bg-wispr-dark relative overflow-hidden">
-        <div className="absolute inset-0 grid-bg-dark opacity-10"></div>
+      {/* Article Content - WHITE */}
+      <article className="py-8 md:py-16 px-6 bg-white relative overflow-hidden">
+        <div className="absolute inset-0 grid-bg-light opacity-[0.05]"></div>
         <div className="max-w-4xl mx-auto relative z-10">
           {/* Tags */}
           <div className="flex flex-wrap gap-3 mb-12">
             {post.tags.map((tag: string, i: number) => (
               <span
                 key={i}
-                className="px-4 py-2 bg-white/5 rounded-xl font-brand text-[10px] font-black uppercase tracking-widest text-slate-400 border border-white/5"
+                className="px-4 py-2 bg-wispr-cream rounded-xl font-brand text-[10px] font-black uppercase tracking-widest text-slate-600 border border-wispr-dark/5"
               >
                 {tag}
               </span>
@@ -181,14 +192,14 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, onBack, onBackToList
           <div className="mt-20 pt-12 border-t border-white/10">
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
               <div>
-                <p className="font-brand text-[11px] font-black uppercase tracking-[0.3em] text-slate-500 mb-2">
+                <p className="font-brand text-[11px] font-black uppercase tracking-[0.3em] text-slate-400 mb-2">
                   Share this article
                 </p>
-                <p className="font-sodo text-lg text-slate-400">
+                <p className="font-sodo text-lg text-slate-600">
                   Found this helpful? Share it with your network.
                 </p>
               </div>
-              <button className="inline-flex items-center gap-4 px-8 py-4 bg-white text-wispr-dark rounded-2xl font-brand text-[11px] font-black uppercase tracking-[0.2em] hover:bg-wispr-purple hover:text-white transition-all active:scale-95 shadow-xl group">
+              <button className="inline-flex items-center gap-4 px-8 py-4 bg-wispr-dark text-white rounded-2xl font-brand text-[11px] font-black uppercase tracking-[0.2em] hover:bg-wispr-purple hover:text-white transition-all active:scale-95 shadow-xl group">
                 <Share2 size={18} className="group-hover:rotate-12 transition-transform" />
                 Share
               </button>
@@ -196,16 +207,16 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, onBack, onBackToList
           </div>
 
           {/* CTA Section */}
-          <div className="mt-16 p-12 md:p-16 bg-white/5 border border-white/10 rounded-[3rem] relative overflow-hidden">
+          <div className="mt-16 p-12 md:p-16 bg-wispr-cream border border-wispr-dark/5 rounded-[3rem] relative overflow-hidden">
             <div className="absolute -left-20 -top-20 w-64 h-64 bg-wispr-purple/20 blur-[100px] rounded-full pointer-events-none"></div>
             <div className="relative z-10">
               <span className="inline-block px-5 py-2 bg-wispr-purple/20 text-wispr-purple rounded-full font-brand text-[10px] font-black uppercase tracking-[0.3em] mb-6">
                 Ready to Scale?
               </span>
-              <h3 className="font-lander text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight">
+              <h3 className="font-lander text-3xl md:text-4xl font-bold text-wispr-dark mb-6 tracking-tight">
                 Implement GEO for your business.
               </h3>
-              <p className="font-sodo text-lg text-slate-400 mb-10 max-w-xl">
+              <p className="font-sodo text-lg text-slate-600 mb-10 max-w-xl">
                 Let CodimAI help you optimize your presence across AI tools and drive qualified inbound leads.
               </p>
               <button
@@ -222,7 +233,7 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, onBack, onBackToList
           <div className="mt-16 text-center">
             <button
               onClick={onBackToList}
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl border border-white/10 font-brand text-[11px] font-black uppercase tracking-[0.2em] text-white/60 hover:bg-white hover:text-wispr-dark transition-all active:scale-95"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl border border-wispr-dark/10 font-brand text-[11px] font-black uppercase tracking-[0.2em] text-wispr-dark/60 hover:bg-wispr-dark hover:text-white transition-all active:scale-95"
             >
               <ArrowLeft size={16} />
               Back to All Articles

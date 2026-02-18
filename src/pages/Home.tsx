@@ -19,7 +19,7 @@ import Footer from '../../components/Footer';
 import BookDemoModal from '../../components/BookDemoModal';
 import PrivacyPolicyModal from '../../components/PrivacyPolicyModal';
 import TermsConditionsModal from '../../components/TermsConditionsModal';
-import { COMPANY_NAME } from '../../constants';
+import { COMPANY_NAME, SERVICES } from '../../constants';
 
 // Swiper imports
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -215,8 +215,8 @@ const Home: React.FC = () => {
                 </section>
 
 
-                {/* Problem/Solution Section - DARK (Even) */}
-                <section className="py-16 md:py-32 px-6 relative overflow-hidden bg-wispr-dark border-y border-white/5">
+                {/* Problem/Solution Section - DARK SEAMLESS */}
+                <section className="py-16 md:py-32 px-6 relative overflow-hidden bg-wispr-dark border-b border-white/5">
                     <div className="absolute inset-0 grid-bg-dark opacity-20"></div>
                     <div className="max-w-7xl mx-auto relative z-10">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
@@ -234,9 +234,11 @@ const Home: React.FC = () => {
                                         "AI-friendly content restructuring",
                                         "Real-time visibility tracking"
                                     ].map((item, i) => (
-                                        <li key={i} className="flex items-center space-x-4 text-slate-300 font-brand font-black text-sm uppercase tracking-wider">
-                                            <CheckCircle2 size={22} className="text-purple-600 shrink-0" />
-                                            <span>{item}</span>
+                                        <li key={i} className="flex items-center space-x-5 text-slate-300 font-brand font-black text-xs md:text-sm uppercase tracking-wider group/list">
+                                            <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-purple-600/10 flex items-center justify-center shrink-0 border border-purple-600/20 group-hover:bg-purple-600/20 group-hover:border-purple-600/40 transition-all duration-500">
+                                                <CheckCircle2 size={18} className="text-purple-500 group-hover:scale-110 transition-transform" />
+                                            </div>
+                                            <span className="group-hover:text-white transition-colors">{item}</span>
                                         </li>
                                     ))}
                                 </ul>
@@ -274,13 +276,25 @@ const Home: React.FC = () => {
                                         { icon: Zap, title: "Fast Results", desc: "Strategic shifts visible in 60-90 days." }
                                     ].map((feature, i) => (
                                         <SwiperSlide key={i} className="max-w-[320px] md:max-w-[400px] px-4">
-                                            <div className="bg-white/5 p-10 rounded-[2.5rem] border border-white/5 hover:border-purple-700/30 transition-all group h-[400px] flex flex-col items-center text-center justify-center backdrop-blur-sm">
-                                                <div className="w-16 h-16 accent-gradient rounded-2xl flex items-center justify-center text-white mb-8 group-hover:rotate-12 transition-transform shadow-xl shadow-purple-700/10">
-                                                    <feature.icon size={32} />
+                                            {({ isActive }) => (
+                                                <div className={`bg-gradient-to-br from-white/10 to-white/5 p-10 rounded-[2.5rem] border transition-all duration-700 h-[420px] flex flex-col items-center text-center justify-center backdrop-blur-md relative overflow-hidden ${isActive ? 'border-purple-600/40 shadow-[0_0_50px_-12px_rgba(147,51,234,0.3)]' : 'border-white/10'}`}>
+                                                    {/* Card Glow */}
+                                                    <div className={`absolute -top-20 -right-20 w-40 h-40 blur-[60px] rounded-full transition-all duration-700 ${isActive ? 'bg-purple-600/20' : 'bg-purple-600/10'}`}></div>
+
+                                                    <div className="relative mb-10 flex items-center justify-center">
+                                                        {/* Just the icon, no background, simple transition */}
+                                                        <div className={`transition-all duration-700 ${isActive ? 'text-purple-500 scale-125 drop-shadow-[0_0_10px_rgba(168,85,247,0.4)]' : 'text-slate-500 scale-100'}`}>
+                                                            <feature.icon size={56} strokeWidth={1.2} />
+                                                        </div>
+                                                    </div>
+
+                                                    <h3 className={`text-2xl md:text-3xl font-brand font-black uppercase tracking-tight mb-5 transition-all duration-500 ${isActive ? 'text-purple-400' : 'text-white'}`}>{feature.title}</h3>
+                                                    <p className={`text-base md:text-lg leading-relaxed font-sodo transition-all duration-500 ${isActive ? 'text-slate-200' : 'text-slate-400'}`}>{feature.desc}</p>
+
+                                                    {/* Bottom Accent */}
+                                                    <div className={`absolute bottom-0 left-0 h-1 bg-gradient-to-r from-transparent via-purple-600 to-transparent transition-all duration-1000 ${isActive ? 'w-full' : 'w-0'}`}></div>
                                                 </div>
-                                                <h3 className="text-2xl font-brand font-black uppercase tracking-tight text-white mb-4">{feature.title}</h3>
-                                                <p className="text-slate-400 text-base leading-relaxed font-sodo">{feature.desc}</p>
-                                            </div>
+                                            )}
                                         </SwiperSlide>
                                     ))}
                                 </Swiper>
@@ -320,7 +334,6 @@ const Home: React.FC = () => {
                                     {[
                                         'vendors/vendor-1.jpg',
                                         'vendors/vendor-2.png',
-                                        'vendors/vendor-3.jpg',
                                         'vendors/vendor-5.jpg',
                                         'vendors/vendor-8.jpg',
                                     ].map((img, i) => (
@@ -357,9 +370,9 @@ const Home: React.FC = () => {
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch mt-8 md:mt-12">
-                            {/* {SERVICES.map((service, i) => (
+                            {SERVICES.map((service, i) => (
                                 <div key={i} className="bg-white p-8 md:p-16 rounded-[2.5rem] md:rounded-[3.5rem] border border-wispr-dark/5 flex flex-col hover:bg-wispr-purple hover:border-wispr-purple transition-all duration-700 hover:-translate-y-3 group reveal-advanced shadow-[0_20px_50px_-15px_rgba(0,0,0,0.03)] hover:shadow-[0_40px_80px_-20px_rgba(139,92,246,0.15)] relative overflow-hidden" style={{ transitionDelay: `${i * 150}ms` }}>
-                                    
+
                                     <div className="absolute top-12 right-12 text-wispr-dark/5 font-lander text-8xl md:text-9xl font-black select-none group-hover:text-white/10 transition-colors duration-700 pointer-events-none">
                                         0{i + 1}
                                     </div>
@@ -384,7 +397,7 @@ const Home: React.FC = () => {
 
                                     <div className="absolute bottom-0 left-0 h-2 bg-gradient-to-r from-wispr-purple via-wispr-purple/50 to-transparent w-0 group-hover:w-full transition-all duration-1000 group-hover:opacity-0"></div>
                                 </div>
-                            ))} */}
+                            ))}
                         </div>
                     </div>
                 </section>
@@ -450,8 +463,8 @@ const Home: React.FC = () => {
                             <button onClick={openBookModal} className="w-full sm:w-auto px-8 md:px-12 py-5 md:py-6 accent-gradient rounded-xl md:rounded-2xl text-white font-brand font-black text-xs md:text-sm uppercase tracking-widest hover:scale-105 sm:hover:scale-110 sm:hover:rotate-[-2deg] transition-all shadow-xl md:shadow-2xl shadow-purple-700/30 cursor-pointer">
                                 Schedule Your Free Audit
                             </button>
-                            <Link to="/education" className="w-full sm:w-auto px-8 md:px-12 py-5 md:py-6 border-2 border-wispr-dark/20 rounded-xl md:rounded-4xl text-wispr-dark font-brand font-black text-xs md:text-sm uppercase tracking-widest hover:bg-wispr-dark hover:text-white hover:border-wispr-dark transition-all flex items-center justify-center space-x-4 group shadow-sm">
-                                <span>Read Our GEO Guide</span>
+                            <Link to="#" className="w-full sm:w-auto px-8 md:px-12 py-5 md:py-6 border-2 border-wispr-dark/20 rounded-xl md:rounded-4xl text-wispr-dark font-brand font-black text-xs md:text-sm uppercase tracking-widest hover:bg-wispr-dark hover:text-white hover:border-wispr-dark transition-all flex items-center justify-center space-x-4 group shadow-sm">
+                                <span>Download Checklist</span>
                                 <ArrowRight size={20} className="group-hover:translate-x-2 md:group-hover:translate-x-3 transition-transform" />
                             </Link>
                         </div>

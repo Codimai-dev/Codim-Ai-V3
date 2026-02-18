@@ -36,17 +36,17 @@ const GeoServices: React.FC = () => {
     }
 
     return (
-        <div className="min-h-screen bg-wispr-cream selection:bg-wispr-purple selection:text-white flex flex-col">
+        <div className="min-h-screen bg-white selection:bg-wispr-purple selection:text-white flex flex-col">
             <Navbar onBookDemo={openBookModal} />
 
             <main className="flex-grow">
                 {/* Hero Section */}
-                <section className="relative pt-20 md:pt-44 pb-20 md:pb-40 px-6 overflow-hidden bg-wispr-cream">
+                <section className="relative pt-20 md:pt-44 pb-20 md:pb-40 px-6 overflow-hidden bg-white">
                     {/* Background Refined Gradients & Mesh */}
                     <div className="absolute inset-0 overflow-hidden pointer-events-none">
                         <div className="absolute top-[-10%] left-[-5%] w-[50%] h-[50%] bg-wispr-purple/15 blur-[120px] rounded-full animate-float opacity-70"></div>
                         <div className="absolute bottom-[-10%] right-[-5%] w-[45%] h-[45%] bg-purple-600/10 blur-[100px] rounded-full animate-float-slow opacity-50" style={{ animationDelay: '-3s' }}></div>
-                        <div className="absolute inset-0 grid-bg-light opacity-[0.12]"></div>
+                        <div className="absolute inset-0 grid-bg-light opacity-[0.08]"></div>
                     </div>
 
                     <div className="max-w-7xl mx-auto relative z-10">
@@ -104,28 +104,28 @@ const GeoServices: React.FC = () => {
                 </section>
 
                 {/* Content Sections */}
-                <section className="py-20 md:py-40 px-6 bg-wispr-dark relative overflow-hidden">
-                    <div className="absolute inset-0 grid-bg-dark opacity-10"></div>
+                <section className="py-20 md:py-40 px-6 bg-white relative overflow-hidden border-t border-wispr-dark/5">
+                    <div className="absolute inset-0 grid-bg-light opacity-[0.05]"></div>
                     <div className="max-w-4xl mx-auto relative z-10">
                         <div className="space-y-16 md:space-y-32">
                             {service.sections.map((section, idx) => (
                                 <div key={idx} className="reveal-advanced" style={{ transitionDelay: `${idx * 150}ms` }}>
-                                    <div className="inline-flex items-center space-x-3 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-md">
+                                    <div className="inline-flex items-center space-x-3 px-4 py-1.5 rounded-full bg-wispr-purple/5 border border-wispr-purple/10 mb-8 backdrop-blur-md">
                                         <span className="text-[10px] font-brand font-black uppercase tracking-[0.4em] text-wispr-purple">Phase 0{idx + 1}</span>
                                     </div>
-                                    <h2 className="font-lander text-4xl md:text-6xl font-bold text-white mb-10 tracking-tight">
+                                    <h2 className="font-lander text-4xl md:text-6xl font-bold text-wispr-dark mb-10 tracking-tight">
                                         {section.heading}
                                     </h2>
-                                    <p className="font-sodo text-xl text-slate-400 leading-relaxed mb-12">
+                                    <p className="font-sodo text-xl text-slate-600 leading-relaxed mb-12">
                                         {section.content}
                                     </p>
                                     {section.bullets && (
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                             {section.bullets.map((bullet, i) => (
-                                                <div key={i} className="bg-white/5 p-8 rounded-[2rem] border border-white/10 hover:border-wispr-purple/40 transition-all duration-500 group">
+                                                <div key={i} className="bg-wispr-cream p-8 rounded-[2rem] border border-wispr-dark/5 hover:border-wispr-purple/40 transition-all duration-500 group">
                                                     <div className="flex items-center space-x-4">
                                                         <div className="w-2 h-2 accent-gradient rounded-full group-hover:scale-150 transition-transform"></div>
-                                                        <span className="font-sodo text-slate-300 text-lg">{bullet}</span>
+                                                        <span className="font-sodo text-slate-700 text-lg">{bullet}</span>
                                                     </div>
                                                 </div>
                                             ))}
@@ -138,7 +138,7 @@ const GeoServices: React.FC = () => {
                 </section>
 
                 {/* Comparison Section */}
-                <section className="py-20 md:py-40 px-6 bg-wispr-cream">
+                <section className="py-20 md:py-40 px-6 bg-white border-t border-wispr-dark/5">
                     <div className="max-w-7xl mx-auto">
                         <div className="text-center mb-24 reveal-advanced">
                             <h2 className="font-lander text-4xl md:text-7xl font-bold text-wispr-dark mb-8 tracking-tighter">
@@ -192,12 +192,12 @@ const GeoServices: React.FC = () => {
                 </section>
 
                 {/* FAQs Section */}
-                <div className="bg-black py-10 md:py-20 px-6">
-                    <FAQSection faqs={service.faqs} theme="dark" />
+                <div className="bg-white py-10 md:py-20 px-6 border-t border-wispr-dark/5">
+                    <FAQSection faqs={service.faqs} theme="light" />
                 </div>
 
                 {/* Final CTA */}
-                <section className="py-12 md:py-48 px-4 md:px-6 bg-wispr-cream">
+                <section className="py-12 md:py-48 px-4 md:px-6 bg-white border-t border-wispr-dark/5">
                     <div className="max-w-5xl mx-auto bg-white p-10 md:p-32 rounded-[2.5rem] md:rounded-[5rem] border-4 border-wispr-dark text-center overflow-hidden relative reveal-advanced shadow-2xl">
                         <div className="absolute -top-32 -left-32 w-96 h-96 bg-purple-800/10 blur-[150px] rounded-full"></div>
                         <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-purple-600/10 blur-[150px] rounded-full"></div>

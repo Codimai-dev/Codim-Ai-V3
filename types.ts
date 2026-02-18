@@ -32,6 +32,7 @@ export interface BlogPost {
   author: {
     name: string;
     role: string;
+    linkedin?: string;
   };
   publishedAt: string;
   readTime: string;

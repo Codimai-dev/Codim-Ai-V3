@@ -69,7 +69,7 @@ const Pricing: React.FC<PricingProps> = ({ theme = 'light', onBookDemo }) => {
           <span className="font-pike font-black uppercase text-[12px] mb-8 block tracking-[0.5em] text-wispr-purple bg-wispr-purple/10 w-fit mx-auto px-6 py-2 rounded-full">INVESTMENT ARCHITECTURE</span>
           <h2 className={`font-lander text-7xl md:text-[11rem] font-bold leading-[0.8] tracking-tighter ${isDark ? 'text-wispr-cream' : 'text-wispr-dark'}`}>
             Growth Plans.<br />
-            <span className="text-slate-400">AI Visibility.</span>
+            <span className="text-wispr-purple">AI Visibility.</span>
           </h2>
         </div>
 

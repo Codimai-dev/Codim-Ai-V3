@@ -8,6 +8,7 @@ export const BLOG_POSTS: BlogPost[] = [
         author: {
             name: 'Aman Kumar',
             role: 'CodimAI Engineering',
+            linkedin: 'https://www.linkedin.com/in/aman-gupta-57729b228?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         },
         publishedAt: 'January 2025',
         readTime: '12 min read',
