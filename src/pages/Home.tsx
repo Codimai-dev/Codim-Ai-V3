@@ -198,16 +198,16 @@ const Home: React.FC = () => {
                 {/* Stats Marquee Section - WHITE */}
                 <section className="bg-white border-y border-wispr-dark/5 overflow-hidden py-4 md:py-8 mb-10 md:mb-20">
                     <div className="animate-marquee flex items-center">
-                        <StatCard val="500+" label="Brands Optimized" delay={0} Icon={Globe} />
+                        <StatCard val="25+" label="Brands Optimized" delay={0} Icon={Globe} />
                         <StatCard val="10+" label="AI Platforms Tracked" delay={100} Icon={Cpu} />
                         <StatCard val="47%" label="Avg. Mention Increase" delay={200} Icon={TrendingUp} />
                         <StatCard val="24/7" label="AIO Monitoring" delay={300} Icon={Activity} />
                         {/* Duplicate for seamless loop */}
-                        <StatCard val="500+" label="Brands Optimized" delay={400} Icon={Globe} />
+                        <StatCard val="25+" label="Brands Optimized" delay={400} Icon={Globe} />
                         <StatCard val="10+" label="AI Platforms Tracked" delay={500} Icon={Cpu} />
                         <StatCard val="47%" label="Avg. Mention Increase" delay={600} Icon={TrendingUp} />
                         <StatCard val="24/7" label="AIO Monitoring" delay={700} Icon={Activity} />
-                        <StatCard val="500+" label="Brands Optimized" delay={800} Icon={Globe} />
+                        <StatCard val="25+" label="Brands Optimized" delay={800} Icon={Globe} />
                         <StatCard val="10+" label="AI Platforms Tracked" delay={900} Icon={Cpu} />
                         <StatCard val="47%" label="Avg. Mention Increase" delay={1000} Icon={TrendingUp} />
                         <StatCard val="24/7" label="AIO Monitoring" delay={1100} Icon={Activity} />
