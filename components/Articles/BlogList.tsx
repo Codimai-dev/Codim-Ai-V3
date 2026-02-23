@@ -52,7 +52,7 @@ const BlogList: React.FC<BlogListProps> = ({ posts, onReadMore, onBack }) => {
         </div>
       </section>
 
-      {/* Blog Grid - DARK (Even) */}
+      {/* Blog Grid - DARK */}
       <section className="py-12 md:py-20 px-6 bg-wispr-dark relative overflow-hidden">
         {/* Subtle Background Elements */}
         <div className="absolute bottom-0 right-0 w-[50vw] h-[50vw] bg-wispr-purple/5 blur-[150px] rounded-full pointer-events-none"></div>
