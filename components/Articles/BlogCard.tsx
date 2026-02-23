@@ -56,12 +56,12 @@ const BlogCard: React.FC<BlogCardProps> = ({ post, index, onReadMore }) => {
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
           {/* Author Avatar Placeholder */}
-          <div
+          {/* <div
             className={`w-10 h-10 rounded-full flex items-center justify-center font-brand font-black text-sm ${isDark ? 'bg-white/10 text-white/60' : 'bg-wispr-cream text-wispr-dark/60'
               }`}
           >
             {post.author.name.charAt(0)}
-          </div>
+          </div> */}
           <div>
             {post.author.linkedin ? (
               <a

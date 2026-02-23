@@ -118,9 +118,9 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, onBack, onBackToList
           >
             {/* Author */}
             <div className="flex items-center gap-4">
-              <div className="w-14 h-14 rounded-full bg-wispr-dark flex items-center justify-center font-brand font-black text-lg text-wispr-purple">
+              {/* <div className="w-14 h-14 rounded-full bg-wispr-dark flex items-center justify-center font-brand font-black text-lg text-wispr-purple">
                 {post.author.name.charAt(0)}
-              </div>
+              </div> */}
               <div>
                 {post.author.linkedin ? (
                   <a

@@ -281,10 +281,47 @@ const Home: React.FC = () => {
                                                     {/* Card Glow */}
                                                     <div className={`absolute -top-20 -right-20 w-40 h-40 blur-[60px] rounded-full transition-all duration-700 ${isActive ? 'bg-purple-600/20' : 'bg-purple-600/10'}`}></div>
 
-                                                    <div className="relative mb-10 flex items-center justify-center">
-                                                        {/* Just the icon, no background, simple transition */}
-                                                        <div className={`transition-all duration-700 ${isActive ? 'text-purple-500 scale-125 drop-shadow-[0_0_10px_rgba(168,85,247,0.4)]' : 'text-slate-500 scale-100'}`}>
-                                                            <feature.icon size={56} strokeWidth={1.2} />
+                                                    {/* 3D Icon Display */}
+                                                    <div className="relative mb-10 flex items-center justify-center" style={{ perspective: '600px' }}>
+                                                        {/* Outer pulsing ring */}
+                                                        <div className={`absolute w-28 h-28 md:w-32 md:h-32 rounded-3xl transition-all duration-700
+                                                            ${isActive
+                                                                ? 'border border-purple-500/30 scale-110 opacity-100 animate-pulse'
+                                                                : 'border border-white/5 scale-100 opacity-0'}
+                                                        `}></div>
+
+                                                        {/* Mid ring */}
+                                                        <div className={`absolute w-20 h-20 md:w-24 md:h-24 rounded-2xl transition-all duration-500
+                                                            ${isActive
+                                                                ? 'border border-purple-400/20 scale-105 opacity-100'
+                                                                : 'border border-white/5 scale-100 opacity-0'}
+                                                        `}></div>
+
+                                                        {/* 3D Icon Box */}
+                                                        <div
+                                                            className={`relative w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center transition-all duration-700
+                                                                ${isActive
+                                                                    ? 'bg-gradient-to-br from-purple-600/30 to-purple-900/40 text-purple-300 -translate-y-2'
+                                                                    : 'bg-white/5 text-slate-500'}
+                                                            `}
+                                                            style={{
+                                                                transform: isActive
+                                                                    ? 'rotateX(8deg) rotateY(-6deg) translateY(-6px)'
+                                                                    : 'rotateX(4deg) rotateY(-3deg) translateY(0px)',
+                                                                boxShadow: isActive
+                                                                    ? '4px 6px 0px 0px rgba(139,92,246,0.8), 0 20px 40px -8px rgba(139,92,246,0.4), inset 0 1px 0 rgba(255,255,255,0.15)'
+                                                                    : '2px 3px 0px 0px rgba(255,255,255,0.05), inset 0 1px 0 rgba(255,255,255,0.05)',
+                                                                border: isActive
+                                                                    ? '1px solid rgba(168,85,247,0.5)'
+                                                                    : '1px solid rgba(255,255,255,0.08)',
+                                                                backdropFilter: 'blur(12px)',
+                                                            }}
+                                                        >
+                                                            {/* Inner glow */}
+                                                            <div className={`absolute inset-0 rounded-2xl transition-opacity duration-700 ${isActive ? 'opacity-100' : 'opacity-0'}`}
+                                                                style={{ background: 'radial-gradient(circle at 30% 30%, rgba(168,85,247,0.3), transparent 70%)' }}
+                                                            ></div>
+                                                            <feature.icon size={34} strokeWidth={1.5} className="relative z-10" />
                                                         </div>
                                                     </div>
 
@@ -370,7 +407,7 @@ const Home: React.FC = () => {
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch mt-8 md:mt-12">
-                            {SERVICES.map((service, i) => (
+                            {/* {SERVICES.map((service, i) => (
                                 <div key={i} className="bg-white p-8 md:p-16 rounded-[2.5rem] md:rounded-[3.5rem] border border-wispr-dark/5 flex flex-col hover:bg-wispr-purple hover:border-wispr-purple transition-all duration-700 hover:-translate-y-3 group reveal-advanced shadow-[0_20px_50px_-15px_rgba(0,0,0,0.03)] hover:shadow-[0_40px_80px_-20px_rgba(139,92,246,0.15)] relative overflow-hidden" style={{ transitionDelay: `${i * 150}ms` }}>
 
                                     <div className="absolute top-12 right-12 text-wispr-dark/5 font-lander text-8xl md:text-9xl font-black select-none group-hover:text-white/10 transition-colors duration-700 pointer-events-none">
@@ -397,7 +434,7 @@ const Home: React.FC = () => {
 
                                     <div className="absolute bottom-0 left-0 h-2 bg-gradient-to-r from-wispr-purple via-wispr-purple/50 to-transparent w-0 group-hover:w-full transition-all duration-1000 group-hover:opacity-0"></div>
                                 </div>
-                            ))}
+                            ))} */}
                         </div>
                     </div>
                 </section>
