@@ -19,7 +19,7 @@ import Footer from '../../components/Footer';
 import BookDemoModal from '../../components/BookDemoModal';
 import PrivacyPolicyModal from '../../components/PrivacyPolicyModal';
 import TermsConditionsModal from '../../components/TermsConditionsModal';
-import { COMPANY_NAME, SERVICES } from '../../constants';
+import { COMPANY_NAME } from '../../constants';
 
 // Swiper imports
 import { Swiper, SwiperSlide } from 'swiper/react';
