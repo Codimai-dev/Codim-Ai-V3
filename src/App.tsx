@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { createHashRouter, RouterProvider } from 'react-router-dom';
 import Home from './pages/Home';
 import Article from './pages/Article';
 import PricingPage from './pages/PricingPage';
@@ -6,21 +6,74 @@ import GeoServices from './pages/GeoServices';
 import NotFound from './pages/NotFound';
 import ScrollToTop from '../components/ScrollToTop';
 
+const router = createHashRouter([
+  {
+    path: "/",
+    element: (
+      <>
+        <ScrollToTop />
+        <Home />
+      </>
+    ),
+  },
+  {
+    path: "/article",
+    element: (
+      <>
+        <ScrollToTop />
+        <Article />
+      </>
+    ),
+  },
+  {
+    path: "/education",
+    element: (
+      <>
+        <ScrollToTop />
+        <Article />
+      </>
+    ),
+  },
+  {
+    path: "/pricing",
+    element: (
+      <>
+        <ScrollToTop />
+        <PricingPage />
+      </>
+    ),
+  },
+  {
+    path: "/geo-services",
+    element: (
+      <>
+        <ScrollToTop />
+        <GeoServices />
+      </>
+    ),
+  },
+  {
+    path: "/contact",
+    element: (
+      <>
+        <ScrollToTop />
+        <Home />
+      </>
+    ),
+  },
+  {
+    path: "*",
+    element: (
+      <>
+        <ScrollToTop />
+        <NotFound />
+      </>
+    ),
+  },
+]);
+
 function App() {
-  return (
-    <Router>
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/article" element={<Article />} />
-        <Route path="/education" element={<Article />} />
-        <Route path="/pricing" element={<PricingPage />} />
-        <Route path="/geo-services" element={<GeoServices />} />
-        <Route path="/contact" element={<Home />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </Router>
-  )
+  return <RouterProvider router={router} />;
 }
 
 export default App;
